@@ -1,0 +1,44 @@
+{
+    "name": "@bonapata/partes",
+    "version": "0.1.0",
+    "description": "Una librería de componentes para react libre.",
+    "main": "dist/cjs/index.js",
+    "module": "dist/esm/index.js",
+    "files": [
+        "dist"
+    ],
+    "devDependencies": {
+        "@types/node": "^18.0.1",
+        "@types/react": "^18.0.15",
+        "@types/react-dom": "^18.0.6",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "typescript": "^4.7.4"
+    },
+    "peerDependencies": {
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    },
+    "scripts": {
+        "build": "rm -rf dist/ && npm run build:esm && npm run build:cjs",
+        "build:esm": "tsc",
+        "build:cjs": "tsc --module CommonJS --outDir dist/cjs"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/juanmanuelgg/bonapata-partes.git"
+    },
+    "keywords": [
+        "React",
+        "components",
+        "library",
+        "libre"
+    ],
+    "author": "Juan Manuel González Garzón",
+    "license": "Unlicense",
+    "types": "./dist/cjs/index.d.ts",
+    "bugs": {
+        "url": "https://github.com/juanmanuelgg/bonapata-partes/issues"
+    },
+    "homepage": "https://github.com/juanmanuelgg/bonapata-partes#readme"
+}
