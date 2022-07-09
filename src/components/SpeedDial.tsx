@@ -1,31 +1,14 @@
 import React, { useState } from 'react';
 
-const pathnames = new Map();
-pathnames.set('/javascript', 'assets/images/js.png');
-pathnames.set('/mysql', 'assets/images/mysql.png');
-pathnames.set('/git', 'assets/images/git.png');
-pathnames.set('/bash', 'assets/images/gnu-bash.png');
-pathnames.set('/postgresql', 'assets/images/postgres.png');
-pathnames.set('/firewall', 'assets/images/cortafuegos.png');
-pathnames.set('/networking', 'assets/images/networking.png');
-pathnames.set('/docker', 'assets/images/docker.png');
-pathnames.set('/ssh', 'assets/images/ssh.png');
-pathnames.set('/python', 'assets/images/python.png');
-pathnames.set('/linux-basic-info', 'assets/images/linux.png');
-pathnames.set('/java', 'assets/images/java.png');
-pathnames.set('/java-process', 'assets/images/java-process.png');
-pathnames.set('/crontab', 'assets/images/cron.png');
-pathnames.set('/vim', 'assets/images/cli-file.png');
-pathnames.set('/heroku-java', 'assets/images/heroku.png');
-
 interface IconContentProps {
     pathname: string;
+    pathnames: Map<string, string>;
 }
 
 const IconContent: React.FunctionComponent<IconContentProps> = (
     props: IconContentProps
 ) => {
-    const { pathname } = props;
+    const { pathname, pathnames = new Map() } = props;
 
     return (
         <span>
@@ -47,12 +30,18 @@ export interface SpeedDialProps {
     right?: string;
     bottom?: string;
     zIndex?: number;
+    pathnames?: Map<string, string>;
 }
 
 export const SpeedDial: React.FunctionComponent<SpeedDialProps> = (
     props: SpeedDialProps
 ) => {
-    const { right = '40px', bottom = '40px', zIndex = 9 } = props;
+    const {
+        right = '40px',
+        bottom = '40px',
+        zIndex = 9,
+        pathnames = new Map()
+    } = props;
 
     const savedFavorites: string = localStorage.getItem('favorites') || '[]';
     let favorites: string[] = Array.from(new Set(JSON.parse(savedFavorites)));
@@ -185,7 +174,7 @@ export const SpeedDial: React.FunctionComponent<SpeedDialProps> = (
                     fontSize: 'xx-small'
                 }}
             >
-                <IconContent pathname={favorite} />
+                <IconContent pathname={favorite} pathnames={pathnames} />
                 <span
                     style={{
                         visibility: closeShow[index] ? 'visible' : 'hidden',
