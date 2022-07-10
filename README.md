@@ -1,2 +1,2 @@
 # bonapata-partes
-Es repositorio guarda una librería de componentes para react libre.
+Este repositorio guarda una librería libre de componentes para React, escrita en Typescript.
