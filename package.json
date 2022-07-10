@@ -1,7 +1,7 @@
 {
     "name": "@bonapata/partes",
     "version": "0.1.1",
-    "description": "Una librería de componentes para react libre.",
+    "description": "Una librería libre de componentes para React, escrita en Typescript.",
     "main": "dist/cjs/index.js",
     "module": "dist/esm/index.js",
     "files": [
@@ -9,21 +9,34 @@
         "src"
     ],
     "devDependencies": {
+        "@babel/core": "^7.18.6",
+        "@babel/preset-env": "^7.18.6",
+        "@babel/preset-react": "^7.18.6",
+        "@cypress/react": "^6.0.0",
+        "@types/cypress": "^1.1.3",
+        "@types/jest": "^28.1.4",
         "@types/node": "^18.0.1",
-        "@types/react": "^18.0.15",
-        "@types/react-dom": "^18.0.6",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0",
-        "typescript": "^4.7.4"
+        "@types/react": "^17.0.39",
+        "@types/react-dom": "^17.0.11",
+        "babel-loader": "^8.2.5",
+        "cypress": "^10.3.0",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "ts-jest": "^28.0.5",
+        "typescript": "^4.7.4",
+        "webpack": "^5.73.0"
     },
     "peerDependencies": {
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0"
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2"
     },
     "scripts": {
         "build": "rm -rf dist/ && npm run build:esm && npm run build:cjs",
         "build:esm": "tsc",
-        "build:cjs": "tsc --module CommonJS --outDir dist/cjs"
+        "build:cjs": "tsc --module CommonJS --outDir dist/cjs",
+        "pretest": "rm -rf dist/esm && npm run build:esm",
+        "test": "cypress run --component",
+        "test:open": "cypress open --component --browser chrome"
     },
     "repository": {
         "type": "git",
