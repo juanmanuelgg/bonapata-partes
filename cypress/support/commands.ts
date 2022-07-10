@@ -1,4 +1,6 @@
 /// <reference types="cypress" />
+
+import { mount } from 'cypress/react';
 // ***********************************************
 // This example commands.ts shows you how to
 // create various custom commands and overwrite
@@ -25,6 +27,7 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 //
+// -- JMGG: This declarations goes better in cypress/cypress.d.ts
 // declare global {
 //   namespace Cypress {
 //     interface Chainable {
@@ -35,3 +38,9 @@
 //     }
 //   }
 // }
+
+Cypress.Commands.add('mount', (component, options) => {
+    // Wrap any parent components needed
+    // ie: return mount(<MyProvider>{component}</MyProvider>, options)
+    return mount(component, options);
+});
