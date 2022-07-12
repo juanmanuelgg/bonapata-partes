@@ -44,3 +44,16 @@ Cypress.Commands.add('mount', (component, options) => {
     // ie: return mount(<MyProvider>{component}</MyProvider>, options)
     return mount(component, options);
 });
+
+/* Examples:
+cy.getByDataCy("example-selector").should("be.visible");
+cy.getByDataCy("example-selector").click();
+cy.getByDataCy("example-selector").should("not.exist");
+cy.getByDataCy("example-selector").should("contain", "Example");
+cy.getByDataCy("example-selector")
+    .should("be.visible")
+    .and("have.text", "Example");
+*/
+Cypress.Commands.add('getByDataCy', (selector, ...args) => {
+    return cy.get(`[data-cy=${selector}]`, ...args);
+});

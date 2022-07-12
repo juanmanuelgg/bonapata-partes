@@ -11,7 +11,7 @@ const IconContent: React.FunctionComponent<IconContentProps> = (
     const { pathname, pathnames = new Map() } = props;
 
     return (
-        <span>
+        <>
             {pathnames.has(pathname) ? (
                 <img
                     src={pathnames.get(pathname)}
@@ -20,9 +20,9 @@ const IconContent: React.FunctionComponent<IconContentProps> = (
                     height="32px"
                 />
             ) : (
-                `${pathname}`
+                <span>{pathname}</span>
             )}
-        </span>
+        </>
     );
 };
 
@@ -129,6 +129,7 @@ export const SpeedDial: React.FunctionComponent<SpeedDialProps> = (
 
     const actionButtons = favorites.map((favorite: string, index: number) => (
         <span
+            data-cy={`favorite-span-${index}`}
             key={favorite}
             onMouseOver={() => {
                 showCloseButton(index);
@@ -155,8 +156,8 @@ export const SpeedDial: React.FunctionComponent<SpeedDialProps> = (
             }}
         >
             <button
+                data-cy={`favorite-goto-button-${index}`}
                 type="button"
-                className="tooltip"
                 onClick={() => goToFavorite(favorite)}
                 style={{
                     display: 'inline-block',
@@ -174,8 +175,13 @@ export const SpeedDial: React.FunctionComponent<SpeedDialProps> = (
                     fontSize: 'xx-small'
                 }}
             >
-                <IconContent pathname={favorite} pathnames={pathnames} />
+                <IconContent
+                    data-cy={`favorite-icon-${index}`}
+                    pathname={favorite}
+                    pathnames={pathnames}
+                />
                 <span
+                    data-cy={`favorite-tooltip-${index}`}
                     style={{
                         visibility: closeShow[index] ? 'visible' : 'hidden',
                         width: '120px',
@@ -194,6 +200,7 @@ export const SpeedDial: React.FunctionComponent<SpeedDialProps> = (
                 </span>
             </button>
             <button
+                data-cy={`favorite-delete-button-${index}`}
                 type="button"
                 onClick={() => {
                     removeFavorite(favorite);
@@ -222,8 +229,9 @@ export const SpeedDial: React.FunctionComponent<SpeedDialProps> = (
     ));
 
     return (
-        <span>
+        <>
             <button
+                data-cy="main-button"
                 type="button"
                 onMouseOver={openOnHover}
                 onFocus={openOnHover}
@@ -246,30 +254,29 @@ export const SpeedDial: React.FunctionComponent<SpeedDialProps> = (
             >
                 {`${favorites.length} ${lock ? '⌛' : '🔗'}`}
             </button>
-            <nav>
-                <button
-                    type="button"
-                    onClick={saveFavorite}
-                    style={{
-                        position: 'fixed',
-                        bottom: `calc(${bottom} + 45px)`,
-                        right: `calc(${right} - 20px)`,
-                        zIndex: zIndex + favorites.length,
-                        width: '25px',
-                        height: '25px',
-                        backgroundColor: '#b5e853',
-                        color: '#000',
-                        fontWeight: 'bold',
-                        borderRadius: '50px',
-                        textAlign: 'center',
-                        boxShadow: '2px 2px 3px #999',
-                        padding: '0px'
-                    }}
-                >
-                    +
-                </button>
-            </nav>
-            <nav>{actionButtons}</nav>
-        </span>
+            <button
+                data-cy="add-button"
+                type="button"
+                onClick={saveFavorite}
+                style={{
+                    position: 'fixed',
+                    bottom: `calc(${bottom} + 45px)`,
+                    right: `calc(${right} - 20px)`,
+                    zIndex: zIndex + favorites.length,
+                    width: '25px',
+                    height: '25px',
+                    backgroundColor: '#b5e853',
+                    color: '#000',
+                    fontWeight: 'bold',
+                    borderRadius: '50px',
+                    textAlign: 'center',
+                    boxShadow: '2px 2px 3px #999',
+                    padding: '0px'
+                }}
+            >
+                +
+            </button>
+            {actionButtons}
+        </>
     );
 };
