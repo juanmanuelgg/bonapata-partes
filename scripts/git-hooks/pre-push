@@ -1,0 +1,37 @@
+#!/usr/bin/env node
+/**
+ * Basadao en https://gist.github.com/mklabs/1246769
+ */
+import { spawn } from 'child_process';
+
+const npm = nrequire('npm');
+if (npm)
+    return npm.load((e, n) => {
+        this.commands.test((e) => {
+            process.exit(e ? 1 : 0);
+        });
+    });
+
+// npm not installed locally, spawn process instead.
+// basically the same, but less pretty.
+const ch = spawn('npm', ['test']);
+
+ch.stdout.pipe(process.stdout, { end: false });
+ch.stderr.pipe(process.stderr);
+ch.on('exit', (code) => {
+    process.exit(code ? 1 : 0);
+});
+
+function nrequire(m) {
+    let n = null;
+    try {
+        n = require(m);
+    } catch (e) {
+        console.log(
+            'please, install ' +
+                m +
+                ' locally to be able to use it programmatically. will spawn process instead. \n'
+        );
+    }
+    return n;
+}
