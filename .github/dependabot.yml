@@ -6,32 +6,32 @@
 version: 2
 
 registries:
-  npm-npmjs:
-    type: npm-registry
-    url: https://registry.npmjs.org
-    token: ${{secrets.NPM_TOKEN_DEPENDABOT}}
+    npm-npmjs:
+        type: npm-registry
+        url: https://registry.npmjs.org
+        token: ${{secrets.NPM_TOKEN_DEPENDABOT}}
 
 updates:
-  - package-ecosystem: "npm"
-    # Check for npm updates
-    directory: "/"
-    registries:
-      - npm-npmjs
-    schedule:
-      interval: "weekly"
-      day: "sunday"
-      time: "07:00"
-      timezone: "America/Bogota"
-    reviewers:
-      - "juanmanuelgg"
-    versioning-strategy: increase-if-necessary
-  
-  - package-ecosystem: "github-actions"
-    # Workflow files stored in the
-    # default location of `.github/workflows`
-    directory: "/"
-    schedule:
-      interval: "weekly"
-      day: "sunday"
-      time: "07:00"
-      timezone: "America/Bogota"
+    - package-ecosystem: 'npm'
+      # Check for npm updates
+      directory: '/'
+      registries:
+          - npm-npmjs
+      schedule:
+          interval: 'weekly'
+          day: 'sunday'
+          time: '07:00'
+          timezone: 'America/Bogota'
+      reviewers:
+          - 'juanmanuelgg'
+      versioning-strategy: increase-if-necessary
+
+    - package-ecosystem: 'github-actions'
+      # Workflow files stored in the
+      # default location of `.github/workflows`
+      directory: '/'
+      schedule:
+          interval: 'weekly'
+          day: 'sunday'
+          time: '07:00'
+          timezone: 'America/Bogota'
