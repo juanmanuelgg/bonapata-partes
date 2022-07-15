@@ -33,8 +33,8 @@
     },
     "scripts": {
         "add-hooks": "scripts/add-hooks.sh",
-        "lint": "prettier --check ./",
-        "lint:fix": "prettier --write ./",
+        "lint": "prettier --config .prettierrc --check ./",
+        "lint:fix": "prettier --config .prettierrc --write ./",
         "prebuild": "npm run lint",
         "build": "rm -rf dist/ && npm run build:esm && npm run build:cjs",
         "build:esm": "tsc",
