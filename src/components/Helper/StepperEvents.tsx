@@ -2,13 +2,18 @@ import React, { useState } from 'react';
 
 export interface StepperProps {
     initial?: number;
-    onChange?: Function;
+    onChange?: (count: number) => void;
 }
 
 export const Stepper: React.FunctionComponent<StepperProps> = (
     props: StepperProps
 ) => {
-    const { initial = 0, onChange = () => {} } = props;
+    const {
+        initial = 0,
+        onChange = (count: number) => {
+            console.log(count);
+        }
+    } = props;
     const [count, setCount] = useState(initial);
 
     const increment = () => {

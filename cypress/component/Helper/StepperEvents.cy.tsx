@@ -60,24 +60,10 @@ describe('<Stepper>', () => {
     it('clicking + fires a change event with the incremented value', () => {
         // Arrange
         const onChangeSpy = cy.spy().as('onChangeSpy');
-        cy.mount(<Stepper />, { props: { onChange: onChangeSpy } });
-    });
-
-    it('clicking + fires a change event with the incremented value', () => {
-        // Arrange
-        const onChangeSpy = cy.spy().as('onChangeSpy');
-        cy.mount(<Stepper onChange={onChangeSpy} />);
-        // Act
-        cy.get(incrementSelector).click();
-    });
-
-    it('clicking + fires a change event with the incremented value', () => {
-        // Arrange
-        const onChangeSpy = cy.spy().as('onChangeSpy');
-        cy.mount(<Stepper onChange={onChangeSpy} />);
+        cy.mount(<Stepper initial={150} onChange={onChangeSpy} />);
         // Act
         cy.get(incrementSelector).click();
         // Assert
-        cy.get('@onChangeSpy').should('have.been.called.with', 1);
+        cy.get('@onChangeSpy').should('have.been.called.with', 151);
     });
 });
