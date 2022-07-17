@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 
-export interface StepperProps {
+export interface StepperEventsProps {
     initial?: number;
     onChange?: (count: number) => void;
 }
 
-export const Stepper: React.FunctionComponent<StepperProps> = (
-    props: StepperProps
+export const StepperEvents: React.FunctionComponent<StepperEventsProps> = (
+    props: StepperEventsProps
 ) => {
     const {
         initial = 0,

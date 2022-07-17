@@ -4,7 +4,7 @@
  * https://docs.cypress.io/guides/component-testing/testing-react
  */
 import * as React from 'react';
-import { Stepper } from '../../../dist/esm/components/Helper/Stepper';
+import { Stepper } from '../../../';
 
 const stepperSelector = '[data-testid=stepper]';
 const incrementSelector = '[aria-label=increment]';

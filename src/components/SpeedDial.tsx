@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 
 interface IconContentProps {
     pathname: string;
@@ -44,8 +44,14 @@ export const SpeedDial: React.FunctionComponent<SpeedDialProps> = (
     } = props;
 
     const savedFavorites: string = localStorage.getItem('favorites') || '[]';
-    let favorites: string[] = Array.from(new Set(JSON.parse(savedFavorites)));
-    localStorage.setItem('favorites', JSON.stringify(favorites));
+    let favorites: string[] = useMemo(() => {
+        const answer: string[] = Array.from(
+            new Set(JSON.parse(savedFavorites))
+        );
+        if (savedFavorites.length !== answer.length)
+            localStorage.setItem('favorites', JSON.stringify(answer));
+        return answer;
+    }, [saveFavorite]);
 
     const show = new Array(favorites.length);
     show.fill(false);
