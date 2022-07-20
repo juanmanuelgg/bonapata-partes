@@ -1,6 +1,6 @@
 {
     "name": "@bonapata/partes",
-    "version": "0.2.5",
+    "version": "0.2.6",
     "description": "Una librería libre de componentes para React, escrita en Typescript.",
     "main": "dist/cjs/index.js",
     "browser": "dist/amd/index.js",
