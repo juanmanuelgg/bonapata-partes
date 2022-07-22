@@ -12,9 +12,10 @@ var __createBinding = (this && this.__createBinding) || (Object.create ? (functi
 var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
-define(["require", "exports", "./components"], function (require, exports, components_1) {
+define("partes", ["require", "exports", "./components"], function (require, exports, components_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    ///<amd-module name='partes'/>
     __exportStar(components_1, exports);
 });
 //# sourceMappingURL=index.js.map
