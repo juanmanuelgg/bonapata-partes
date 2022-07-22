@@ -12,10 +12,18 @@ var __createBinding = (this && this.__createBinding) || (Object.create ? (functi
 var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
-define(["require", "exports", "./Stepper", "./StepperEvents"], function (require, exports, Stepper_1, StepperEvents_1) {
+(function (factory) {
+    if (typeof module === "object" && typeof module.exports === "object") {
+        var v = factory(require, exports);
+        if (v !== undefined) module.exports = v;
+    }
+    else if (typeof define === "function" && define.amd) {
+        define(["require", "exports", "./Stepper", "./StepperEvents"], factory);
+    }
+})(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    __exportStar(Stepper_1, exports);
-    __exportStar(StepperEvents_1, exports);
+    __exportStar(require("./Stepper"), exports);
+    __exportStar(require("./StepperEvents"), exports);
 });
 //# sourceMappingURL=index.js.map

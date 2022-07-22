@@ -12,10 +12,18 @@ var __createBinding = (this && this.__createBinding) || (Object.create ? (functi
 var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
-define("partes", ["require", "exports", "./components"], function (require, exports, components_1) {
+(function (factory) {
+    if (typeof module === "object" && typeof module.exports === "object") {
+        var v = factory(require, exports);
+        if (v !== undefined) module.exports = v;
+    }
+    else if (typeof define === "function" && define.amd) {
+        define(["require", "exports", "./Helper", "./SpeedDial"], factory);
+    }
+})(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    ///<amd-module name='partes'/>
-    __exportStar(components_1, exports);
+    __exportStar(require("./Helper"), exports);
+    __exportStar(require("./SpeedDial"), exports);
 });
 //# sourceMappingURL=index.js.map

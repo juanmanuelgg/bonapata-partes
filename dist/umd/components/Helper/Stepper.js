@@ -1,4 +1,3 @@
-"use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     var desc = Object.getOwnPropertyDescriptor(m, k);
@@ -22,16 +21,27 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Stepper = void 0;
-const react_1 = __importStar(require("react"));
-const Stepper = (props) => {
-    const { initial = 0 } = props;
-    const [count, setCount] = (0, react_1.useState)(initial);
-    return (react_1.default.createElement("div", { "data-testid": "stepper" },
-        react_1.default.createElement("button", { "aria-label": "decrement", onClick: () => setCount(count - 1) }, "-"),
-        count,
-        react_1.default.createElement("button", { "aria-label": "increment", onClick: () => setCount(count + 1) }, "+")));
-};
-exports.Stepper = Stepper;
+(function (factory) {
+    if (typeof module === "object" && typeof module.exports === "object") {
+        var v = factory(require, exports);
+        if (v !== undefined) module.exports = v;
+    }
+    else if (typeof define === "function" && define.amd) {
+        define(["require", "exports", "react"], factory);
+    }
+})(function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    exports.Stepper = void 0;
+    const react_1 = __importStar(require("react"));
+    const Stepper = (props) => {
+        const { initial = 0 } = props;
+        const [count, setCount] = (0, react_1.useState)(initial);
+        return (react_1.default.createElement("div", { "data-testid": "stepper" },
+            react_1.default.createElement("button", { "aria-label": "decrement", onClick: () => setCount(count - 1) }, "-"),
+            count,
+            react_1.default.createElement("button", { "aria-label": "increment", onClick: () => setCount(count + 1) }, "+")));
+    };
+    exports.Stepper = Stepper;
+});
 //# sourceMappingURL=Stepper.js.map

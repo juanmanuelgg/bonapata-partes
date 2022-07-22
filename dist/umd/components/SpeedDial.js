@@ -30,11 +30,19 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-define(["require", "exports", "react"], function (require, exports, react_1) {
+(function (factory) {
+    if (typeof module === "object" && typeof module.exports === "object") {
+        var v = factory(require, exports);
+        if (v !== undefined) module.exports = v;
+    }
+    else if (typeof define === "function" && define.amd) {
+        define(["require", "exports", "react"], factory);
+    }
+})(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.SpeedDial = void 0;
-    react_1 = __importStar(react_1);
+    const react_1 = __importStar(require("react"));
     const IconContent = (props) => {
         const { pathname, pathnames = new Map() } = props;
         return (react_1.default.createElement(react_1.default.Fragment, null, pathnames.has(pathname) ? (react_1.default.createElement("img", { src: pathnames.get(pathname), alt: pathname, width: "32px", height: "32px" })) : (react_1.default.createElement("span", null, pathname))));

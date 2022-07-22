@@ -21,19 +21,39 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
-define(["require", "exports", "react"], function (require, exports, react_1) {
+(function (factory) {
+    if (typeof module === "object" && typeof module.exports === "object") {
+        var v = factory(require, exports);
+        if (v !== undefined) module.exports = v;
+    }
+    else if (typeof define === "function" && define.amd) {
+        define(["require", "exports", "react"], factory);
+    }
+})(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.Stepper = void 0;
-    react_1 = __importStar(react_1);
-    const Stepper = (props) => {
-        const { initial = 0 } = props;
+    exports.StepperEvents = void 0;
+    const react_1 = __importStar(require("react"));
+    const StepperEvents = (props) => {
+        const { initial = 0, onChange = (count) => {
+            console.log(count);
+        } } = props;
         const [count, setCount] = (0, react_1.useState)(initial);
+        const increment = () => {
+            const newCount = count + 1;
+            setCount(newCount);
+            onChange(newCount);
+        };
+        const decrement = () => {
+            const newCount = count - 1;
+            setCount(newCount);
+            onChange(newCount);
+        };
         return (react_1.default.createElement("div", { "data-testid": "stepper" },
-            react_1.default.createElement("button", { "aria-label": "decrement", onClick: () => setCount(count - 1) }, "-"),
+            react_1.default.createElement("button", { "aria-label": "decrement", onClick: decrement }, "-"),
             count,
-            react_1.default.createElement("button", { "aria-label": "increment", onClick: () => setCount(count + 1) }, "+")));
+            react_1.default.createElement("button", { "aria-label": "increment", onClick: increment }, "+")));
     };
-    exports.Stepper = Stepper;
+    exports.StepperEvents = StepperEvents;
 });
-//# sourceMappingURL=Stepper.js.map
+//# sourceMappingURL=StepperEvents.js.map
