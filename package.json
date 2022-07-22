@@ -5,7 +5,7 @@
     "main": "dist/cjs/index.js",
     "browser": "dist/amd/index.js",
     "module": "dist/esm/index.js",
-    "types": "./dist/esm/index.d.ts",
+    "types": "dist/esm/index.d.ts",
     "files": [
         "dist",
         "src"
