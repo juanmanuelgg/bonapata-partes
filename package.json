@@ -1,6 +1,6 @@
 {
     "name": "@bonapata/partes",
-    "version": "0.2.10",
+    "version": "0.2.11",
     "description": "Una librería libre de componentes para React, escrita en Typescript.",
     "main": "dist/umd/partes.js",
     "browser": "dist/umd/partes.js",
@@ -44,7 +44,7 @@
         "lint": "eslint ./",
         "lint:fix": "eslint --fix ./",
         "prebuild": "npm run lint",
-        "build": "rm -rf dist/ && npm run build:esm && && npm run build:umd",
+        "build": "rm -rf dist/ && npm run build:esm && npm run build:umd",
         "build:esm": "tsc",
         "build:umd": "webpack --mode production --config ./webpack.umd.config.js",
         "pretest": "npm run build",
