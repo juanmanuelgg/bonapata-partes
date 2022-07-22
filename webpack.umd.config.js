@@ -5,7 +5,8 @@ module.exports = {
         library: 'partes',
         libraryTarget: 'umd',
         filename: 'umd/partes.js',
-        auxiliaryComment: 'Test Comment'
+        auxiliaryComment:
+            'Una librería libre de componentes para React, escrita en Typescript.'
     },
     externals: {
         react: {
