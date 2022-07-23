@@ -6,7 +6,6 @@
 
 ## Packages
 
-|  Package | Description |
-|  --- | --- |
-|  [@bonapata/partes](./partes.md) |  |
-
+| Package                         | Description                                                          |
+| ------------------------------- | -------------------------------------------------------------------- |
+| [@bonapata/partes](./partes.md) | Una librería libre de componentes para React, escrita en Typescript. |

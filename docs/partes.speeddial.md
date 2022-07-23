@@ -9,5 +9,5 @@ Un boton de favoritos que muestra los pathnames que el usuario va guardando mien
 <b>Signature:</b>
 
 ```typescript
-SpeedDial: React.FunctionComponent<ISpeedDialProps>
+SpeedDial: React.FunctionComponent<ISpeedDialProps>;
 ```

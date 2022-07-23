@@ -9,12 +9,11 @@ La interfaz que cumplen las propiedades del componente IStepperEventsProps.
 <b>Signature:</b>
 
 ```typescript
-export interface IStepperEventsProps 
+export interface IStepperEventsProps
 ```
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [initial?](./partes.isteppereventsprops.initial.md) |  | number | <i>(Optional)</i> Valor inicial del contador. |
-
+| Property                                            | Modifiers | Type   | Description                                   |
+| --------------------------------------------------- | --------- | ------ | --------------------------------------------- |
+| [initial?](./partes.isteppereventsprops.initial.md) |           | number | <i>(Optional)</i> Valor inicial del contador. |

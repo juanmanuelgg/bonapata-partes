@@ -1,3 +1,9 @@
+/**
+ * Una librería libre de componentes para React, escrita en Typescript.
+ *
+ * @packageDocumentation
+ */
+
 import { default as React_2 } from 'react';
 
 /**

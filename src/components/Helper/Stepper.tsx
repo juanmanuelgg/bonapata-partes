@@ -16,7 +16,7 @@ export interface IStepperProps {
  * Componente que muestra un contador que puede incrementar o decrementar su valor por 1 unidad cada vez.
  * @param props - Valores de entrada del componente.
  * @returns Un componente función de React renderizable.
- * @public 
+ * @public
  */
 export const Stepper: React.FunctionComponent<IStepperProps> = (
     props: IStepperProps

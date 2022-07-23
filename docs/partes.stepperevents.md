@@ -9,5 +9,5 @@ Componente que muestra un contador que puede incrementar o decrementar su valor 
 <b>Signature:</b>
 
 ```typescript
-StepperEvents: React.FunctionComponent<IStepperEventsProps>
+StepperEvents: React.FunctionComponent<IStepperEventsProps>;
 ```

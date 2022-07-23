@@ -9,12 +9,11 @@ La interfaz que cumplen las propiedades del componente IStepperProps.
 <b>Signature:</b>
 
 ```typescript
-export interface IStepperProps 
+export interface IStepperProps
 ```
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [initial?](./partes.istepperprops.initial.md) |  | number | <i>(Optional)</i> Valor inicial del contador. |
-
+| Property                                      | Modifiers | Type   | Description                                   |
+| --------------------------------------------- | --------- | ------ | --------------------------------------------- |
+| [initial?](./partes.istepperprops.initial.md) |           | number | <i>(Optional)</i> Valor inicial del contador. |

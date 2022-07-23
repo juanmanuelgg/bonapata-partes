@@ -17,7 +17,6 @@ interface IIconContentProps {
     pathnames: Map<string, string>;
 }
 
-
 /**
  * Componente que muestra el icono que deberia acompañar a cada uno de los favoritos.
  * Muestra el pathname como texto si en el mapa(pathnames) no existe un icono asociado.
@@ -48,7 +47,7 @@ const IconContent: React.FunctionComponent<IIconContentProps> = (
 
 /**
  * La interfaz que cumplen las propiedades del componente SpeedDial.
- * @public 
+ * @public
  */
 export interface ISpeedDialProps {
     /**

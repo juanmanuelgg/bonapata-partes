@@ -4,9 +4,9 @@
 name: Node.js CI
 
 on:
-# Puse una proteccion sobre main, ahora solo entra codigo a traves de pull_requests
-#    push:
-#        branches: ['main']
+    # Puse una proteccion sobre main, ahora solo entra codigo a traves de pull_requests
+    #    push:
+    #        branches: ['main']
     pull_request:
         branches: ['main']
 
