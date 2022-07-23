@@ -1,12 +1,32 @@
 import React, { useState, useMemo } from 'react';
 
-interface IconContentProps {
+/**
+ * La interfaz que cumplen las propiedades del componente IconContent.
+ * @internal
+ */
+interface IIconContentProps {
+    /**
+     *  El pathanme que se desea representar.
+     * @internal
+     */
     pathname: string;
+    /**
+     * El mapa con todos los pathnames y la url de su icono.
+     * @internal
+     */
     pathnames: Map<string, string>;
 }
 
-const IconContent: React.FunctionComponent<IconContentProps> = (
-    props: IconContentProps
+
+/**
+ * Componente que muestra el icono que deberia acompañar a cada uno de los favoritos.
+ * Muestra el pathname como texto si en el mapa(pathnames) no existe un icono asociado.
+ * @param props - Valores de entrada del componente.
+ * @returns Un componente función de React renderizable.
+ * @internal
+ */
+const IconContent: React.FunctionComponent<IIconContentProps> = (
+    props: IIconContentProps
 ) => {
     const { pathname, pathnames = new Map() } = props;
 
@@ -26,15 +46,42 @@ const IconContent: React.FunctionComponent<IconContentProps> = (
     );
 };
 
-export interface SpeedDialProps {
+/**
+ * La interfaz que cumplen las propiedades del componente SpeedDial.
+ * @public 
+ */
+export interface ISpeedDialProps {
+    /**
+     * Distancia del borde derecho a la que se ubicara el Speed Dial. Por defecto son 40px.
+     * @public
+     */
     right?: string;
+    /**
+     * Distancia del borde inferior a la que se ubicara el Speed Dial. Por defecto son 40px.
+     * @public
+     */
     bottom?: string;
+    /**
+     * Cantidad de capaz que se elevara el Speed Dial. Por defecto es 9.
+     * @public
+     */
     zIndex?: number;
+    /**
+     * El mapa con todos los pathnames esperados y la url de su icono.
+     * @public
+     */
     pathnames?: Map<string, string>;
 }
 
-export const SpeedDial: React.FunctionComponent<SpeedDialProps> = (
-    props: SpeedDialProps
+/**
+ * Un boton de favoritos que muestra los pathnames que el usuario va guardando mientras navega las paginas.
+ * Conocido como Speed Dial, permite el acceso rapido a las paginas de interes del usuario.
+ * @param props - Valores de entrada del componente.
+ * @returns Un componente función de React renderizable.
+ * @public
+ */
+export const SpeedDial: React.FunctionComponent<ISpeedDialProps> = (
+    props: ISpeedDialProps
 ) => {
     const {
         right = '40px',
@@ -60,12 +107,23 @@ export const SpeedDial: React.FunctionComponent<SpeedDialProps> = (
     const [openSpeedDial, setOpenSpeedDial] = useState(false);
     const [lock, setLock] = useState(false);
 
+    /**
+     * Metodo auxiliar que permite esperar una cantidad de tiempo en ms.
+     * A travez de la creacón de una promesa que resuelve en el tiempo parametrizado.
+     * @param ms - Cantidad de milisegundos a esperar.
+     * @returns Una promesa que resuelve al pasar los ms especificados.
+     * @internal
+     */
     async function delay(ms: number) {
         return new Promise((res) => {
             setTimeout(res, ms);
         });
     }
 
+    /**
+     * Metodo auxiliar que permite espera las animaciones en ejecución.
+     * @internal
+     */
     async function waitLock() {
         // Se hace el calculo 6 veces en el tiempo que tiende ha de estar puesto el lock
 
@@ -74,7 +132,12 @@ export const SpeedDial: React.FunctionComponent<SpeedDialProps> = (
         for (let rety = 0; lock && rety < 10; rety += 1) await delay(125);
     }
 
-    async function handleOnClick() {
+    /**
+     * Metodo que abre o cierra la lista de favoritos, dependiendo del estado en el que lo encuentra, cuando se hace click en el boton principal.
+     * @returns nada. Se evita la accion retornando si no existen favoritos.
+     * @internal
+     */
+    async function handleOnClickInMain() {
         if (favorites.length === 0) return;
 
         await waitLock();
@@ -84,7 +147,12 @@ export const SpeedDial: React.FunctionComponent<SpeedDialProps> = (
         setLock(false);
     }
 
-    async function openOnHover() {
+    /**
+     * Metodo que abre la lista de favoritos cuando se pasa sobre el boton principal.
+     * @returns nada. Se evita la accion retornando si no existen favoritos o si la lista ya esta abierta.
+     * @internal
+     */
+    async function openOnHoverInMain() {
         if (openSpeedDial || favorites.length === 0) return;
 
         await waitLock();
@@ -94,6 +162,10 @@ export const SpeedDial: React.FunctionComponent<SpeedDialProps> = (
         setLock(false);
     }
 
+    /**
+     * Metodo que permite guardar el pathname en el que se encuentra el usuario como un favorito.
+     *@internal
+     */
     async function saveFavorite() {
         await waitLock();
         setLock(true);
@@ -104,6 +176,11 @@ export const SpeedDial: React.FunctionComponent<SpeedDialProps> = (
         setLock(false);
     }
 
+    /**
+     * Metodo que permite eliminar un pathname favorito de la lista.
+     * @param favorite - pathname favorito a eliminar.
+     * @internal
+     */
     async function removeFavorite(favorite: string) {
         await waitLock();
         setLock(true);
@@ -119,15 +196,30 @@ export const SpeedDial: React.FunctionComponent<SpeedDialProps> = (
         setLock(false);
     }
 
+    /**
+     * Metodo que permite navegar a la url especificada.
+     * @param url - URL a la que se desea navegar.
+     * @internal
+     */
     function goToFavorite(url: string) {
         if (window.location.pathname !== url) window.location.assign(url);
     }
 
+    /**
+     * Metodo que hace visible el boton de eliminar de uno de los favoritos.
+     * @param index - Indice del boton a mostrar.
+     * @internal
+     */
     async function showCloseButton(index: number) {
         closeShow[index] = true;
         setCloseShow([...closeShow]);
     }
 
+    /**
+     * Metodo que esconde el boton de eliminar de uno de los favoritos.
+     * @param index - Indice del boton a esconder.
+     * @internal
+     */
     async function hideCloseButton(index: number) {
         closeShow[index] = false;
         setCloseShow([...closeShow]);
@@ -239,9 +331,9 @@ export const SpeedDial: React.FunctionComponent<SpeedDialProps> = (
             <button
                 data-cy="main-button"
                 type="button"
-                onMouseOver={openOnHover}
-                onFocus={openOnHover}
-                onClick={handleOnClick}
+                onMouseOver={openOnHoverInMain}
+                onFocus={openOnHoverInMain}
+                onClick={handleOnClickInMain}
                 style={{
                     position: 'fixed',
                     bottom,

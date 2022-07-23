@@ -1,2 +1,2 @@
-/// <amd-module name="partes" />
 export * from './components';
+//# sourceMappingURL=index.d.ts.map
