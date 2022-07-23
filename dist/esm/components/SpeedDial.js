@@ -8,10 +8,24 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import React, { useState, useMemo } from 'react';
+/**
+ * Componente que muestra el icono que deberia acompañar a cada uno de los favoritos.
+ * Muestra el pathname como texto si en el mapa(pathnames) no existe un icono asociado.
+ * @param props - Valores de entrada del componente.
+ * @returns Un componente función de React renderizable.
+ * @internal
+ */
 const IconContent = (props) => {
     const { pathname, pathnames = new Map() } = props;
     return (React.createElement(React.Fragment, null, pathnames.has(pathname) ? (React.createElement("img", { src: pathnames.get(pathname), alt: pathname, width: "32px", height: "32px" })) : (React.createElement("span", null, pathname))));
 };
+/**
+ * Un boton de favoritos que muestra los pathnames que el usuario va guardando mientras navega las paginas.
+ * Conocido como Speed Dial, permite el acceso rapido a las paginas de interes del usuario.
+ * @param props - Valores de entrada del componente.
+ * @returns Un componente función de React renderizable.
+ * @public
+ */
 export const SpeedDial = (props) => {
     const { right = '40px', bottom = '40px', zIndex = 9, pathnames = new Map() } = props;
     const savedFavorites = localStorage.getItem('favorites') || '[]';
@@ -26,6 +40,13 @@ export const SpeedDial = (props) => {
     const [closeShow, setCloseShow] = useState(show);
     const [openSpeedDial, setOpenSpeedDial] = useState(false);
     const [lock, setLock] = useState(false);
+    /**
+     * Metodo auxiliar que permite esperar una cantidad de tiempo en ms.
+     * A travez de la creacón de una promesa que resuelve en el tiempo parametrizado.
+     * @param ms - Cantidad de milisegundos a esperar.
+     * @returns Una promesa que resuelve al pasar los ms especificados.
+     * @internal
+     */
     function delay(ms) {
         return __awaiter(this, void 0, void 0, function* () {
             return new Promise((res) => {
@@ -33,6 +54,10 @@ export const SpeedDial = (props) => {
             });
         });
     }
+    /**
+     * Metodo auxiliar que permite espera las animaciones en ejecución.
+     * @internal
+     */
     function waitLock() {
         return __awaiter(this, void 0, void 0, function* () {
             // Se hace el calculo 6 veces en el tiempo que tiende ha de estar puesto el lock
@@ -42,7 +67,12 @@ export const SpeedDial = (props) => {
                 yield delay(125);
         });
     }
-    function handleOnClick() {
+    /**
+     * Metodo que abre o cierra la lista de favoritos, dependiendo del estado en el que lo encuentra, cuando se hace click en el boton principal.
+     * @returns nada. Se evita la accion retornando si no existen favoritos.
+     * @internal
+     */
+    function handleOnClickInMain() {
         return __awaiter(this, void 0, void 0, function* () {
             if (favorites.length === 0)
                 return;
@@ -53,7 +83,12 @@ export const SpeedDial = (props) => {
             setLock(false);
         });
     }
-    function openOnHover() {
+    /**
+     * Metodo que abre la lista de favoritos cuando se pasa sobre el boton principal.
+     * @returns nada. Se evita la accion retornando si no existen favoritos o si la lista ya esta abierta.
+     * @internal
+     */
+    function openOnHoverInMain() {
         return __awaiter(this, void 0, void 0, function* () {
             if (openSpeedDial || favorites.length === 0)
                 return;
@@ -64,6 +99,10 @@ export const SpeedDial = (props) => {
             setLock(false);
         });
     }
+    /**
+     * Metodo que permite guardar el pathname en el que se encuentra el usuario como un favorito.
+     *@internal
+     */
     function saveFavorite() {
         return __awaiter(this, void 0, void 0, function* () {
             yield waitLock();
@@ -76,6 +115,11 @@ export const SpeedDial = (props) => {
             setLock(false);
         });
     }
+    /**
+     * Metodo que permite eliminar un pathname favorito de la lista.
+     * @param favorite - pathname favorito a eliminar.
+     * @internal
+     */
     function removeFavorite(favorite) {
         return __awaiter(this, void 0, void 0, function* () {
             yield waitLock();
@@ -94,16 +138,31 @@ export const SpeedDial = (props) => {
             setLock(false);
         });
     }
+    /**
+     * Metodo que permite navegar a la url especificada.
+     * @param url - URL a la que se desea navegar.
+     * @internal
+     */
     function goToFavorite(url) {
         if (window.location.pathname !== url)
             window.location.assign(url);
     }
+    /**
+     * Metodo que hace visible el boton de eliminar de uno de los favoritos.
+     * @param index - Indice del boton a mostrar.
+     * @internal
+     */
     function showCloseButton(index) {
         return __awaiter(this, void 0, void 0, function* () {
             closeShow[index] = true;
             setCloseShow([...closeShow]);
         });
     }
+    /**
+     * Metodo que esconde el boton de eliminar de uno de los favoritos.
+     * @param index - Indice del boton a esconder.
+     * @internal
+     */
     function hideCloseButton(index) {
         return __awaiter(this, void 0, void 0, function* () {
             closeShow[index] = false;
@@ -175,7 +234,7 @@ export const SpeedDial = (props) => {
                 padding: '0px'
             } }, "x"))));
     return (React.createElement(React.Fragment, null,
-        React.createElement("button", { "data-cy": "main-button", type: "button", onMouseOver: openOnHover, onFocus: openOnHover, onClick: handleOnClick, style: {
+        React.createElement("button", { "data-cy": "main-button", type: "button", onMouseOver: openOnHoverInMain, onFocus: openOnHoverInMain, onClick: handleOnClickInMain, style: {
                 position: 'fixed',
                 bottom,
                 right,
