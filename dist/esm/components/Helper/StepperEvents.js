@@ -6,9 +6,12 @@ import React, { useState } from 'react';
  * @public
  */
 export const StepperEvents = (props) => {
-    const { initial = 0, onChange = (count) => {
-        console.log(count);
-    } } = props;
+    const {
+        initial = 0,
+        onChange = (count) => {
+            console.log(count);
+        }
+    } = props;
     const [count, setCount] = useState(initial);
     /**
      * Función con la que se incrementa el contador.
@@ -28,9 +31,20 @@ export const StepperEvents = (props) => {
         setCount(newCount);
         onChange(newCount);
     };
-    return (React.createElement("div", { "data-testid": "stepper" },
-        React.createElement("button", { "aria-label": "decrement", onClick: decrement }, "-"),
+    return React.createElement(
+        'div',
+        { 'data-testid': 'stepper' },
+        React.createElement(
+            'button',
+            { 'aria-label': 'decrement', onClick: decrement },
+            '-'
+        ),
         count,
-        React.createElement("button", { "aria-label": "increment", onClick: increment }, "+")));
+        React.createElement(
+            'button',
+            { 'aria-label': 'increment', onClick: increment },
+            '+'
+        )
+    );
 };
 //# sourceMappingURL=StepperEvents.js.map

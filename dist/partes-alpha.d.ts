@@ -83,4 +83,4 @@ export declare const Stepper: React_2.FunctionComponent<IStepperProps>;
  */
 export declare const StepperEvents: React_2.FunctionComponent<IStepperEventsProps>;
 
-export { }
+export {};

@@ -1,12 +1,38 @@
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
+var __awaiter =
+    (this && this.__awaiter) ||
+    function (thisArg, _arguments, P, generator) {
+        function adopt(value) {
+            return value instanceof P
+                ? value
+                : new P(function (resolve) {
+                      resolve(value);
+                  });
+        }
+        return new (P || (P = Promise))(function (resolve, reject) {
+            function fulfilled(value) {
+                try {
+                    step(generator.next(value));
+                } catch (e) {
+                    reject(e);
+                }
+            }
+            function rejected(value) {
+                try {
+                    step(generator['throw'](value));
+                } catch (e) {
+                    reject(e);
+                }
+            }
+            function step(result) {
+                result.done
+                    ? resolve(result.value)
+                    : adopt(result.value).then(fulfilled, rejected);
+            }
+            step(
+                (generator = generator.apply(thisArg, _arguments || [])).next()
+            );
+        });
+    };
 import React, { useState, useMemo } from 'react';
 /**
  * Componente que muestra el icono que deberia acompañar a cada uno de los favoritos.
@@ -17,7 +43,18 @@ import React, { useState, useMemo } from 'react';
  */
 const IconContent = (props) => {
     const { pathname, pathnames = new Map() } = props;
-    return (React.createElement(React.Fragment, null, pathnames.has(pathname) ? (React.createElement("img", { src: pathnames.get(pathname), alt: pathname, width: "32px", height: "32px" })) : (React.createElement("span", null, pathname))));
+    return React.createElement(
+        React.Fragment,
+        null,
+        pathnames.has(pathname)
+            ? React.createElement('img', {
+                  src: pathnames.get(pathname),
+                  alt: pathname,
+                  width: '32px',
+                  height: '32px'
+              })
+            : React.createElement('span', null, pathname)
+    );
 };
 /**
  * Un boton de favoritos que muestra los pathnames que el usuario va guardando mientras navega las paginas.
@@ -27,7 +64,12 @@ const IconContent = (props) => {
  * @public
  */
 export const SpeedDial = (props) => {
-    const { right = '40px', bottom = '40px', zIndex = 9, pathnames = new Map() } = props;
+    const {
+        right = '40px',
+        bottom = '40px',
+        zIndex = 9,
+        pathnames = new Map()
+    } = props;
     const savedFavorites = localStorage.getItem('favorites') || '[]';
     let favorites = useMemo(() => {
         const answer = Array.from(new Set(JSON.parse(savedFavorites)));
@@ -63,8 +105,7 @@ export const SpeedDial = (props) => {
             // Se hace el calculo 6 veces en el tiempo que tiende ha de estar puesto el lock
             // si se queda puesto se espera 4 timepos mas pero finalmente se libera el proceso
             // eslint-disable-next-line no-await-in-loop
-            for (let rety = 0; lock && rety < 10; rety += 1)
-                yield delay(125);
+            for (let rety = 0; lock && rety < 10; rety += 1) yield delay(125);
         });
     }
     /**
@@ -74,8 +115,7 @@ export const SpeedDial = (props) => {
      */
     function handleOnClickInMain() {
         return __awaiter(this, void 0, void 0, function* () {
-            if (favorites.length === 0)
-                return;
+            if (favorites.length === 0) return;
             yield waitLock();
             setLock(true);
             setOpenSpeedDial(!openSpeedDial);
@@ -90,8 +130,7 @@ export const SpeedDial = (props) => {
      */
     function openOnHoverInMain() {
         return __awaiter(this, void 0, void 0, function* () {
-            if (openSpeedDial || favorites.length === 0)
-                return;
+            if (openSpeedDial || favorites.length === 0) return;
             yield waitLock();
             setLock(true);
             setOpenSpeedDial(true);
@@ -110,8 +149,7 @@ export const SpeedDial = (props) => {
             favorites.push(window.location.pathname);
             localStorage.setItem('favorites', JSON.stringify(favorites));
             setOpenSpeedDial(true);
-            if (!openSpeedDial)
-                yield delay(750);
+            if (!openSpeedDial) yield delay(750);
             setLock(false);
         });
     }
@@ -125,13 +163,11 @@ export const SpeedDial = (props) => {
             yield waitLock();
             setLock(true);
             setOpenSpeedDial(false);
-            if (openSpeedDial)
-                yield delay(750);
+            if (openSpeedDial) yield delay(750);
             const array = [];
             favorites = Array.from(new Set(favorites));
             favorites.forEach((element) => {
-                if (element !== favorite)
-                    array.push(element);
+                if (element !== favorite) array.push(element);
             });
             favorites = array;
             localStorage.setItem('favorites', JSON.stringify(favorites));
@@ -144,8 +180,7 @@ export const SpeedDial = (props) => {
      * @internal
      */
     function goToFavorite(url) {
-        if (window.location.pathname !== url)
-            window.location.assign(url);
+        if (window.location.pathname !== url) window.location.assign(url);
     }
     /**
      * Metodo que hace visible el boton de eliminar de uno de los favoritos.
@@ -169,101 +204,168 @@ export const SpeedDial = (props) => {
             setCloseShow([...closeShow]);
         });
     }
-    const actionButtons = favorites.map((favorite, index) => (React.createElement("span", { "data-cy": `favorite-span-${index}`, key: favorite, onMouseOver: () => {
-            showCloseButton(index);
-        }, onFocus: () => {
-            showCloseButton(index);
-        }, onMouseOut: () => {
-            hideCloseButton(index);
-        }, onBlur: () => {
-            hideCloseButton(index);
-        }, style: {
-            display: 'inline-block',
-            position: 'fixed',
-            bottom: 0,
-            right: 0,
-            zIndex: zIndex + favorites.length - 1 - index,
-            transform: `translateY(-${openSpeedDial ? 65 * (favorites.length - index) : 0}px)`,
-            transition: '0.75s'
-        } },
-        React.createElement("button", { "data-cy": `favorite-goto-button-${index}`, type: "button", onClick: () => goToFavorite(favorite), style: {
-                display: 'inline-block',
-                position: 'fixed',
-                bottom,
-                right,
-                margin: 4,
-                width: '60px',
-                height: '60px',
-                backgroundColor: '#FFF',
-                color: '#000',
-                fontWeight: 'bold',
-                borderRadius: '50px',
-                textAlign: 'center',
-                fontSize: 'xx-small'
-            } },
-            React.createElement(IconContent, { "data-cy": `favorite-icon-${index}`, pathname: favorite, pathnames: pathnames }),
-            React.createElement("span", { "data-cy": `favorite-tooltip-${index}`, style: {
-                    visibility: closeShow[index] ? 'visible' : 'hidden',
-                    width: '120px',
-                    backgroundColor: 'black',
-                    color: '#fff',
+    const actionButtons = favorites.map((favorite, index) =>
+        React.createElement(
+            'span',
+            {
+                'data-cy': `favorite-span-${index}`,
+                key: favorite,
+                onMouseOver: () => {
+                    showCloseButton(index);
+                },
+                onFocus: () => {
+                    showCloseButton(index);
+                },
+                onMouseOut: () => {
+                    hideCloseButton(index);
+                },
+                onBlur: () => {
+                    hideCloseButton(index);
+                },
+                style: {
+                    display: 'inline-block',
+                    position: 'fixed',
+                    bottom: 0,
+                    right: 0,
+                    zIndex: zIndex + favorites.length - 1 - index,
+                    transform: `translateY(-${
+                        openSpeedDial ? 65 * (favorites.length - index) : 0
+                    }px)`,
+                    transition: '0.75s'
+                }
+            },
+            React.createElement(
+                'button',
+                {
+                    'data-cy': `favorite-goto-button-${index}`,
+                    type: 'button',
+                    onClick: () => goToFavorite(favorite),
+                    style: {
+                        display: 'inline-block',
+                        position: 'fixed',
+                        bottom,
+                        right,
+                        margin: 4,
+                        width: '60px',
+                        height: '60px',
+                        backgroundColor: '#FFF',
+                        color: '#000',
+                        fontWeight: 'bold',
+                        borderRadius: '50px',
+                        textAlign: 'center',
+                        fontSize: 'xx-small'
+                    }
+                },
+                React.createElement(IconContent, {
+                    'data-cy': `favorite-icon-${index}`,
+                    pathname: favorite,
+                    pathnames: pathnames
+                }),
+                React.createElement(
+                    'span',
+                    {
+                        'data-cy': `favorite-tooltip-${index}`,
+                        style: {
+                            visibility: closeShow[index] ? 'visible' : 'hidden',
+                            width: '120px',
+                            backgroundColor: 'black',
+                            color: '#fff',
+                            textAlign: 'center',
+                            borderRadius: '6px',
+                            padding: '5px 0',
+                            position: 'absolute',
+                            zIndex,
+                            right: '105%',
+                            top: '35%'
+                        }
+                    },
+                    favorite
+                )
+            ),
+            React.createElement(
+                'button',
+                {
+                    'data-cy': `favorite-delete-button-${index}`,
+                    type: 'button',
+                    onClick: () => {
+                        removeFavorite(favorite);
+                    },
+                    style: {
+                        display:
+                            closeShow[index] && openSpeedDial
+                                ? 'inline-block'
+                                : 'none',
+                        position: 'fixed',
+                        bottom: `calc(${bottom} + 45px)`,
+                        right,
+                        width: '20px',
+                        height: '20px',
+                        backgroundColor: '#f23a12',
+                        color: '#000',
+                        fontWeight: 'bold',
+                        borderRadius: '50px',
+                        textAlign: 'center',
+                        padding: '0px'
+                    }
+                },
+                'x'
+            )
+        )
+    );
+    return React.createElement(
+        React.Fragment,
+        null,
+        React.createElement(
+            'button',
+            {
+                'data-cy': 'main-button',
+                type: 'button',
+                onMouseOver: openOnHoverInMain,
+                onFocus: openOnHoverInMain,
+                onClick: handleOnClickInMain,
+                style: {
+                    position: 'fixed',
+                    bottom,
+                    right,
+                    zIndex: zIndex + favorites.length * 2,
+                    width: '60px',
+                    height: '60px',
+                    backgroundColor: '#069cff',
+                    color: '#FFF',
+                    fontWeight: 'bold',
+                    borderRadius: '50px',
                     textAlign: 'center',
-                    borderRadius: '6px',
-                    padding: '5px 0',
-                    position: 'absolute',
-                    zIndex,
-                    right: '105%',
-                    top: '35%'
-                } }, favorite)),
-        React.createElement("button", { "data-cy": `favorite-delete-button-${index}`, type: "button", onClick: () => {
-                removeFavorite(favorite);
-            }, style: {
-                display: closeShow[index] && openSpeedDial
-                    ? 'inline-block'
-                    : 'none',
-                position: 'fixed',
-                bottom: `calc(${bottom} + 45px)`,
-                right,
-                width: '20px',
-                height: '20px',
-                backgroundColor: '#f23a12',
-                color: '#000',
-                fontWeight: 'bold',
-                borderRadius: '50px',
-                textAlign: 'center',
-                padding: '0px'
-            } }, "x"))));
-    return (React.createElement(React.Fragment, null,
-        React.createElement("button", { "data-cy": "main-button", type: "button", onMouseOver: openOnHoverInMain, onFocus: openOnHoverInMain, onClick: handleOnClickInMain, style: {
-                position: 'fixed',
-                bottom,
-                right,
-                zIndex: zIndex + favorites.length * 2,
-                width: '60px',
-                height: '60px',
-                backgroundColor: '#069cff',
-                color: '#FFF',
-                fontWeight: 'bold',
-                borderRadius: '50px',
-                textAlign: 'center',
-                boxShadow: '2px 2px 3px #999',
-                margin: 4
-            } }, `${favorites.length} ${lock ? '⌛' : '🔗'}`),
-        React.createElement("button", { "data-cy": "add-button", type: "button", onClick: saveFavorite, style: {
-                position: 'fixed',
-                bottom: `calc(${bottom} + 45px)`,
-                right: `calc(${right} - 20px)`,
-                zIndex: zIndex + favorites.length,
-                width: '25px',
-                height: '25px',
-                backgroundColor: '#b5e853',
-                color: '#000',
-                fontWeight: 'bold',
-                borderRadius: '50px',
-                textAlign: 'center',
-                boxShadow: '2px 2px 3px #999',
-                padding: '0px'
-            } }, "+"),
-        actionButtons));
+                    boxShadow: '2px 2px 3px #999',
+                    margin: 4
+                }
+            },
+            `${favorites.length} ${lock ? '⌛' : '🔗'}`
+        ),
+        React.createElement(
+            'button',
+            {
+                'data-cy': 'add-button',
+                type: 'button',
+                onClick: saveFavorite,
+                style: {
+                    position: 'fixed',
+                    bottom: `calc(${bottom} + 45px)`,
+                    right: `calc(${right} - 20px)`,
+                    zIndex: zIndex + favorites.length,
+                    width: '25px',
+                    height: '25px',
+                    backgroundColor: '#b5e853',
+                    color: '#000',
+                    fontWeight: 'bold',
+                    borderRadius: '50px',
+                    textAlign: 'center',
+                    boxShadow: '2px 2px 3px #999',
+                    padding: '0px'
+                }
+            },
+            '+'
+        ),
+        actionButtons
+    );
 };
 //# sourceMappingURL=SpeedDial.js.map
