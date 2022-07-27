@@ -34,7 +34,7 @@ export declare interface ISpeedDialProps {
 }
 
 /**
- * La interfaz que cumplen las propiedades del componente IStepperEventsProps.
+ * La interfaz que cumplen las propiedades del componente StepperEvents.
  * @public
  */
 export declare interface IStepperEventsProps {
@@ -51,7 +51,7 @@ export declare interface IStepperEventsProps {
 }
 
 /**
- * La interfaz que cumplen las propiedades del componente IStepperProps.
+ * La interfaz que cumplen las propiedades del componente Stepper.
  * @public
  */
 export declare interface IStepperProps {

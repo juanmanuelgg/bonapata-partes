@@ -305,7 +305,7 @@
                 {
                     "kind": "Interface",
                     "canonicalReference": "@bonapata/partes!IStepperEventsProps:interface",
-                    "docComment": "/**\n * La interfaz que cumplen las propiedades del componente IStepperEventsProps.\n *\n * @public\n */\n",
+                    "docComment": "/**\n * La interfaz que cumplen las propiedades del componente StepperEvents.\n *\n * @public\n */\n",
                     "excerptTokens": [
                         {
                             "kind": "Content",
@@ -349,7 +349,7 @@
                 {
                     "kind": "Interface",
                     "canonicalReference": "@bonapata/partes!IStepperProps:interface",
-                    "docComment": "/**\n * La interfaz que cumplen las propiedades del componente IStepperProps.\n *\n * @public\n */\n",
+                    "docComment": "/**\n * La interfaz que cumplen las propiedades del componente Stepper.\n *\n * @public\n */\n",
                     "excerptTokens": [
                         {
                             "kind": "Content",

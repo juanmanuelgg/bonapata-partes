@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 /**
- * La interfaz que cumplen las propiedades del componente IStepperProps.
+ * La interfaz que cumplen las propiedades del componente Stepper.
  * @public
  */
 export interface IStepperProps {
