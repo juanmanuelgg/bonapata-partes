@@ -178,12 +178,12 @@
                                     ),
                                 t
                             );
-                        }, [S]);
+                        }, [w]);
                         const u = new Array(s.length);
                         u.fill(!1);
                         const [p, f] = (0, t.useState)(u),
-                            [h, g] = (0, t.useState)(!1),
-                            [x, b] = (0, t.useState)(!1);
+                            [h, x] = (0, t.useState)(!1),
+                            [b, g] = (0, t.useState)(!1);
                         function m(t) {
                             return a(this, void 0, void 0, function* () {
                                 return new Promise((e) => {
@@ -193,7 +193,7 @@
                         }
                         function y() {
                             return a(this, void 0, void 0, function* () {
-                                for (let t = 0; x && t < 10; t += 1)
+                                for (let t = 0; b && t < 10; t += 1)
                                     yield m(125);
                             });
                         }
@@ -202,53 +202,53 @@
                                 h ||
                                     0 === s.length ||
                                     (yield y(),
-                                    b(!0),
                                     g(!0),
+                                    x(!0),
                                     yield m(750),
-                                    b(!1));
+                                    g(!1));
                             });
                         }
-                        function S() {
+                        function w() {
                             return a(this, void 0, void 0, function* () {
                                 yield y(),
-                                    b(!0),
+                                    g(!0),
                                     s.push(window.location.pathname),
                                     localStorage.setItem(
                                         'favorites',
                                         JSON.stringify(s)
                                     ),
-                                    g(!0),
+                                    x(!0),
                                     h || (yield m(750)),
-                                    b(!1);
+                                    g(!1);
                             });
                         }
-                        function w(t) {
+                        function S(t) {
                             return a(this, void 0, void 0, function* () {
                                 (p[t] = !0), f([...p]);
                             });
                         }
-                        function E(t) {
+                        function k(t) {
                             return a(this, void 0, void 0, function* () {
                                 (p[t] = !1), f([...p]);
                             });
                         }
-                        const k = s.map((t, n) =>
+                        const E = s.map((t, n) =>
                             e().createElement(
                                 'span',
                                 {
                                     'data-cy': `favorite-span-${n}`,
                                     key: t,
                                     onMouseOver: () => {
-                                        w(n);
+                                        S(n);
                                     },
                                     onFocus: () => {
-                                        w(n);
+                                        S(n);
                                     },
                                     onMouseOut: () => {
-                                        E(n);
+                                        k(n);
                                     },
                                     onBlur: () => {
-                                        E(n);
+                                        k(n);
                                     },
                                     style: {
                                         display: 'inline-block',
@@ -278,6 +278,8 @@
                                             );
                                             var e;
                                         },
+                                        className:
+                                            'bg-white dark:bg-slate-800 text-black dark:text-white',
                                         style: {
                                             display: 'inline-block',
                                             position: 'fixed',
@@ -286,8 +288,6 @@
                                             margin: 4,
                                             width: '60px',
                                             height: '60px',
-                                            backgroundColor: '#FFF',
-                                            color: '#000',
                                             fontWeight: 'bold',
                                             borderRadius: '50px',
                                             textAlign: 'center',
@@ -335,8 +335,8 @@
                                                     void 0,
                                                     function* () {
                                                         yield y(),
-                                                            b(!0),
-                                                            g(!1),
+                                                            g(!0),
+                                                            x(!1),
                                                             h && (yield m(750));
                                                         const e = [];
                                                         (s = Array.from(
@@ -353,7 +353,7 @@
                                                                     s
                                                                 )
                                                             ),
-                                                            b(!1);
+                                                            g(!1);
                                                     }
                                                 );
                                             })(t);
@@ -398,10 +398,10 @@
                                             function* () {
                                                 0 !== s.length &&
                                                     (yield y(),
-                                                    b(!0),
-                                                    g(!h),
+                                                    g(!0),
+                                                    x(!h),
                                                     yield m(750),
-                                                    b(!1));
+                                                    g(!1));
                                             }
                                         );
                                     },
@@ -421,14 +421,14 @@
                                         margin: 4
                                     }
                                 },
-                                `${s.length} ${x ? '⌛' : '🔗'}`
+                                `${s.length} ${b ? '⌛' : '🔗'}`
                             ),
                             e().createElement(
                                 'button',
                                 {
                                     'data-cy': 'add-button',
                                     type: 'button',
-                                    onClick: S,
+                                    onClick: w,
                                     style: {
                                         position: 'fixed',
                                         bottom: `calc(${i} + 45px)`,
@@ -447,7 +447,7 @@
                                 },
                                 '+'
                             ),
-                            k
+                            E
                         );
                     };
             })(),

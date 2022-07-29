@@ -256,6 +256,7 @@ export const SpeedDial: React.FunctionComponent<ISpeedDialProps> = (
                 data-cy={`favorite-goto-button-${index}`}
                 type="button"
                 onClick={() => goToFavorite(favorite)}
+                className="bg-white dark:bg-slate-800 text-black dark:text-white"
                 style={{
                     display: 'inline-block',
                     position: 'fixed',
@@ -264,8 +265,6 @@ export const SpeedDial: React.FunctionComponent<ISpeedDialProps> = (
                     margin: 4,
                     width: '60px',
                     height: '60px',
-                    backgroundColor: '#FFF',
-                    color: '#000',
                     fontWeight: 'bold',
                     borderRadius: '50px',
                     textAlign: 'center',

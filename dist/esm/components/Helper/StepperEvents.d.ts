@@ -1,6 +1,6 @@
 import React from 'react';
 /**
- * La interfaz que cumplen las propiedades del componente IStepperEventsProps.
+ * La interfaz que cumplen las propiedades del componente StepperEvents.
  * @public
  */
 export interface IStepperEventsProps {

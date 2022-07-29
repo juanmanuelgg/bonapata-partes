@@ -8,11 +8,11 @@ Una librería libre de componentes para React, escrita en Typescript.
 
 ## Interfaces
 
-| Interface                                              | Description                                                                 |
-| ------------------------------------------------------ | --------------------------------------------------------------------------- |
-| [ISpeedDialProps](./partes.ispeeddialprops.md)         | La interfaz que cumplen las propiedades del componente SpeedDial.           |
-| [IStepperEventsProps](./partes.isteppereventsprops.md) | La interfaz que cumplen las propiedades del componente IStepperEventsProps. |
-| [IStepperProps](./partes.istepperprops.md)             | La interfaz que cumplen las propiedades del componente IStepperProps.       |
+| Interface                                              | Description                                                           |
+| ------------------------------------------------------ | --------------------------------------------------------------------- |
+| [ISpeedDialProps](./partes.ispeeddialprops.md)         | La interfaz que cumplen las propiedades del componente SpeedDial.     |
+| [IStepperEventsProps](./partes.isteppereventsprops.md) | La interfaz que cumplen las propiedades del componente StepperEvents. |
+| [IStepperProps](./partes.istepperprops.md)             | La interfaz que cumplen las propiedades del componente Stepper.       |
 
 ## Variables
 

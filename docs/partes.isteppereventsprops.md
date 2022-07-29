@@ -4,7 +4,7 @@
 
 ## IStepperEventsProps interface
 
-La interfaz que cumplen las propiedades del componente IStepperEventsProps.
+La interfaz que cumplen las propiedades del componente StepperEvents.
 
 <b>Signature:</b>
 
