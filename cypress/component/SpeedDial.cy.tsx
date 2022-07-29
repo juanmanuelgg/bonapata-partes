@@ -45,5 +45,19 @@ describe('SpeedDial.cy.tsx', () => {
         // Assert
         cy.getByDataCy('favorite-span-0').should('not.exist');
     });
+
+    it('Show dark mode', () => {
+        // Arrange
+        cy.mount(
+            <div className="dark">
+                <SpeedDial />
+            </div>
+        );
+        // Act
+        cy.getByDataCy('add-button').click();
+        // Assert
+        cy.getByDataCy('favorite-goto-button-0').should('be.visible');
+        // TODO ... evaluar color
+    });
     // TODO ... make more rigorous tests
 });
