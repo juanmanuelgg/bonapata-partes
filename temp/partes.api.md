@@ -6,6 +6,13 @@
 import { default as React_2 } from 'react';
 
 // @public
+export interface INotificationProps {
+    imageSrc?: string;
+    message?: string;
+    title?: string;
+}
+
+// @public
 export interface ISpeedDialProps {
     bottom?: string;
     pathnames?: Map<string, string>;
@@ -24,6 +31,10 @@ export interface IStepperEventsProps {
 export interface IStepperProps {
     initial?: number;
 }
+
+// @public
+const Notification_2: React_2.FunctionComponent<INotificationProps>;
+export { Notification_2 as Notification };
 
 // @public
 export const SpeedDial: React_2.FunctionComponent<ISpeedDialProps>;

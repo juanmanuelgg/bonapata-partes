@@ -174,6 +174,104 @@
             "members": [
                 {
                     "kind": "Interface",
+                    "canonicalReference": "@bonapata/partes!INotificationProps:interface",
+                    "docComment": "/**\n * La interfaz que cumplen las propiedades del componente Notification.\n *\n * @public\n */\n",
+                    "excerptTokens": [
+                        {
+                            "kind": "Content",
+                            "text": "export interface INotificationProps "
+                        }
+                    ],
+                    "releaseTag": "Public",
+                    "name": "INotificationProps",
+                    "preserveMemberOrder": false,
+                    "members": [
+                        {
+                            "kind": "PropertySignature",
+                            "canonicalReference": "@bonapata/partes!INotificationProps#imageSrc:member",
+                            "docComment": "/**\n * Imagen que acompaña la notificación.\n *\n * @public\n */\n",
+                            "excerptTokens": [
+                                {
+                                    "kind": "Content",
+                                    "text": "imageSrc?: "
+                                },
+                                {
+                                    "kind": "Content",
+                                    "text": "string"
+                                },
+                                {
+                                    "kind": "Content",
+                                    "text": ";"
+                                }
+                            ],
+                            "isReadonly": false,
+                            "isOptional": true,
+                            "releaseTag": "Public",
+                            "name": "imageSrc",
+                            "propertyTypeTokenRange": {
+                                "startIndex": 1,
+                                "endIndex": 2
+                            }
+                        },
+                        {
+                            "kind": "PropertySignature",
+                            "canonicalReference": "@bonapata/partes!INotificationProps#message:member",
+                            "docComment": "/**\n * Mensaje a mostrar en la notificación.\n *\n * @public\n */\n",
+                            "excerptTokens": [
+                                {
+                                    "kind": "Content",
+                                    "text": "message?: "
+                                },
+                                {
+                                    "kind": "Content",
+                                    "text": "string"
+                                },
+                                {
+                                    "kind": "Content",
+                                    "text": ";"
+                                }
+                            ],
+                            "isReadonly": false,
+                            "isOptional": true,
+                            "releaseTag": "Public",
+                            "name": "message",
+                            "propertyTypeTokenRange": {
+                                "startIndex": 1,
+                                "endIndex": 2
+                            }
+                        },
+                        {
+                            "kind": "PropertySignature",
+                            "canonicalReference": "@bonapata/partes!INotificationProps#title:member",
+                            "docComment": "/**\n * Titulo de la notificación.\n *\n * @public\n */\n",
+                            "excerptTokens": [
+                                {
+                                    "kind": "Content",
+                                    "text": "title?: "
+                                },
+                                {
+                                    "kind": "Content",
+                                    "text": "string"
+                                },
+                                {
+                                    "kind": "Content",
+                                    "text": ";"
+                                }
+                            ],
+                            "isReadonly": false,
+                            "isOptional": true,
+                            "releaseTag": "Public",
+                            "name": "title",
+                            "propertyTypeTokenRange": {
+                                "startIndex": 1,
+                                "endIndex": 2
+                            }
+                        }
+                    ],
+                    "extendsTokenRanges": []
+                },
+                {
+                    "kind": "Interface",
                     "canonicalReference": "@bonapata/partes!ISpeedDialProps:interface",
                     "docComment": "/**\n * La interfaz que cumplen las propiedades del componente SpeedDial.\n *\n * @public\n */\n",
                     "excerptTokens": [
@@ -389,6 +487,42 @@
                         }
                     ],
                     "extendsTokenRanges": []
+                },
+                {
+                    "kind": "Variable",
+                    "canonicalReference": "@bonapata/partes!Notification_2:var",
+                    "docComment": "/**\n * Un contenedor rectangolar apara notificaciones con logo, remitente y mensaje.\n *\n * @param props - Valores de entrada del componente.\n *\n * @returns Un componente función de React renderizable.\n *\n * @public\n */\n",
+                    "excerptTokens": [
+                        {
+                            "kind": "Content",
+                            "text": "Notification: "
+                        },
+                        {
+                            "kind": "Reference",
+                            "text": "React.FunctionComponent",
+                            "canonicalReference": "@types/react!~React.FunctionComponent:interface"
+                        },
+                        {
+                            "kind": "Content",
+                            "text": "<"
+                        },
+                        {
+                            "kind": "Reference",
+                            "text": "INotificationProps",
+                            "canonicalReference": "@bonapata/partes!INotificationProps:interface"
+                        },
+                        {
+                            "kind": "Content",
+                            "text": ">"
+                        }
+                    ],
+                    "isReadonly": true,
+                    "releaseTag": "Public",
+                    "name": "Notification_2",
+                    "variableTypeTokenRange": {
+                        "startIndex": 1,
+                        "endIndex": 5
+                    }
                 },
                 {
                     "kind": "Variable",

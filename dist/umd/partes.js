@@ -18,8 +18,8 @@
         function o(t) {
             var i = n[t];
             if (void 0 !== i) return i.exports;
-            var r = (n[t] = { exports: {} });
-            return e[t](r, r.exports, o), r.exports;
+            var a = (n[t] = { exports: {} });
+            return e[t](a, a.exports, o), a.exports;
         }
         (o.n = (t) => {
             var e = t && t.__esModule ? () => t.default : () => t;
@@ -48,15 +48,16 @@
             (() => {
                 o.r(i),
                     o.d(i, {
-                        SpeedDial: () => c,
+                        Notification: () => r,
+                        SpeedDial: () => s,
                         Stepper: () => n,
-                        StepperEvents: () => r
+                        StepperEvents: () => a
                     });
                 var t = o(359),
                     e = o.n(t);
                 const n = (n) => {
                         const { initial: o = 0 } = n,
-                            [i, r] = (0, t.useState)(o);
+                            [i, a] = (0, t.useState)(o);
                         return e().createElement(
                             'div',
                             { 'data-testid': 'stepper' },
@@ -64,7 +65,7 @@
                                 'button',
                                 {
                                     'aria-label': 'decrement',
-                                    onClick: () => r(i - 1)
+                                    onClick: () => a(i - 1)
                                 },
                                 '-'
                             ),
@@ -73,20 +74,20 @@
                                 'button',
                                 {
                                     'aria-label': 'increment',
-                                    onClick: () => r(i + 1)
+                                    onClick: () => a(i + 1)
                                 },
                                 '+'
                             )
                         );
                     },
-                    r = (n) => {
+                    a = (n) => {
                         const {
                                 initial: o = 0,
                                 onChange: i = (t) => {
                                     console.log(t);
                                 }
                             } = n,
-                            [r, a] = (0, t.useState)(o);
+                            [a, r] = (0, t.useState)(o);
                         return e().createElement(
                             'div',
                             { 'data-testid': 'stepper' },
@@ -95,40 +96,81 @@
                                 {
                                     'aria-label': 'decrement',
                                     onClick: () => {
-                                        const t = r - 1;
-                                        a(t), i(t);
+                                        const t = a - 1;
+                                        r(t), i(t);
                                     }
                                 },
                                 '-'
                             ),
-                            r,
+                            a,
                             e().createElement(
                                 'button',
                                 {
                                     'aria-label': 'increment',
                                     onClick: () => {
-                                        const t = r + 1;
-                                        a(t), i(t);
+                                        const t = a + 1;
+                                        r(t), i(t);
                                     }
                                 },
                                 '+'
                             )
                         );
+                    },
+                    r = (t) => {
+                        const {
+                            imageSrc: n,
+                            title: o = 'Platform',
+                            message: i = 'You have a new message!'
+                        } = t;
+                        return e().createElement(
+                            'div',
+                            {
+                                className:
+                                    'p-6 max-w-sm mx-auto bg-white dark:bg-black rounded-xl shadow-lg flex items-center space-x-4'
+                            },
+                            n &&
+                                e().createElement(
+                                    'div',
+                                    { className: 'shrink-0' },
+                                    e().createElement('img', {
+                                        className:
+                                            'h-12 w-12 text-black dark:text-white',
+                                        src: n
+                                    })
+                                ),
+                            e().createElement(
+                                'div',
+                                null,
+                                e().createElement(
+                                    'div',
+                                    {
+                                        className:
+                                            'text-xl font-medium text-black dark:text-white'
+                                    },
+                                    o
+                                ),
+                                e().createElement(
+                                    'p',
+                                    { className: 'text-slate-500' },
+                                    i
+                                )
+                            )
+                        );
                     };
-                var a = function (t, e, n, o) {
-                    return new (n || (n = Promise))(function (i, r) {
-                        function a(t) {
+                var l = function (t, e, n, o) {
+                    return new (n || (n = Promise))(function (i, a) {
+                        function r(t) {
                             try {
                                 c(o.next(t));
                             } catch (t) {
-                                r(t);
+                                a(t);
                             }
                         }
                         function l(t) {
                             try {
                                 c(o.throw(t));
                             } catch (t) {
-                                r(t);
+                                a(t);
                             }
                         }
                         function c(t) {
@@ -140,12 +182,12 @@
                                       ? e
                                       : new n(function (t) {
                                             t(e);
-                                        })).then(a, l);
+                                        })).then(r, l);
                         }
                         c((o = o.apply(t, e || [])).next());
                     });
                 };
-                const l = (t) => {
+                const c = (t) => {
                         const { pathname: n, pathnames: o = new Map() } = t;
                         return e().createElement(
                             e().Fragment,
@@ -160,18 +202,18 @@
                                 : e().createElement('span', null, n)
                         );
                     },
-                    c = (n) => {
+                    s = (n) => {
                         const {
                                 right: o = '40px',
                                 bottom: i = '40px',
-                                zIndex: r = 9,
-                                pathnames: c = new Map()
+                                zIndex: a = 9,
+                                pathnames: r = new Map()
                             } = n,
-                            d = localStorage.getItem('favorites') || '[]';
-                        let s = (0, t.useMemo)(() => {
-                            const t = Array.from(new Set(JSON.parse(d)));
+                            s = localStorage.getItem('favorites') || '[]';
+                        let d = (0, t.useMemo)(() => {
+                            const t = Array.from(new Set(JSON.parse(s)));
                             return (
-                                d.length !== t.length &&
+                                s.length !== t.length &&
                                     localStorage.setItem(
                                         'favorites',
                                         JSON.stringify(t)
@@ -179,85 +221,85 @@
                                 t
                             );
                         }, [w]);
-                        const u = new Array(s.length);
+                        const u = new Array(d.length);
                         u.fill(!1);
-                        const [p, f] = (0, t.useState)(u),
-                            [h, x] = (0, t.useState)(!1),
-                            [b, g] = (0, t.useState)(!1);
-                        function m(t) {
-                            return a(this, void 0, void 0, function* () {
+                        const [p, m] = (0, t.useState)(u),
+                            [f, x] = (0, t.useState)(!1),
+                            [h, g] = (0, t.useState)(!1);
+                        function b(t) {
+                            return l(this, void 0, void 0, function* () {
                                 return new Promise((e) => {
                                     setTimeout(e, t);
                                 });
                             });
                         }
-                        function y() {
-                            return a(this, void 0, void 0, function* () {
-                                for (let t = 0; b && t < 10; t += 1)
-                                    yield m(125);
+                        function v() {
+                            return l(this, void 0, void 0, function* () {
+                                for (let t = 0; h && t < 10; t += 1)
+                                    yield b(125);
                             });
                         }
-                        function v() {
-                            return a(this, void 0, void 0, function* () {
-                                h ||
-                                    0 === s.length ||
-                                    (yield y(),
+                        function y() {
+                            return l(this, void 0, void 0, function* () {
+                                f ||
+                                    0 === d.length ||
+                                    (yield v(),
                                     g(!0),
                                     x(!0),
-                                    yield m(750),
+                                    yield b(750),
                                     g(!1));
                             });
                         }
                         function w() {
-                            return a(this, void 0, void 0, function* () {
-                                yield y(),
+                            return l(this, void 0, void 0, function* () {
+                                yield v(),
                                     g(!0),
-                                    s.push(window.location.pathname),
+                                    d.push(window.location.pathname),
                                     localStorage.setItem(
                                         'favorites',
-                                        JSON.stringify(s)
+                                        JSON.stringify(d)
                                     ),
                                     x(!0),
-                                    h || (yield m(750)),
+                                    f || (yield b(750)),
                                     g(!1);
                             });
                         }
-                        function S(t) {
-                            return a(this, void 0, void 0, function* () {
-                                (p[t] = !0), f([...p]);
-                            });
-                        }
                         function k(t) {
-                            return a(this, void 0, void 0, function* () {
-                                (p[t] = !1), f([...p]);
+                            return l(this, void 0, void 0, function* () {
+                                (p[t] = !0), m([...p]);
                             });
                         }
-                        const E = s.map((t, n) =>
+                        function S(t) {
+                            return l(this, void 0, void 0, function* () {
+                                (p[t] = !1), m([...p]);
+                            });
+                        }
+                        const E = d.map((t, n) =>
                             e().createElement(
                                 'span',
                                 {
                                     'data-cy': `favorite-span-${n}`,
                                     key: t,
                                     onMouseOver: () => {
-                                        S(n);
+                                        k(n);
                                     },
                                     onFocus: () => {
-                                        S(n);
+                                        k(n);
                                     },
                                     onMouseOut: () => {
-                                        k(n);
+                                        S(n);
                                     },
                                     onBlur: () => {
-                                        k(n);
+                                        S(n);
                                     },
                                     style: {
                                         display: 'inline-block',
                                         position: 'fixed',
                                         bottom: 0,
                                         right: 0,
-                                        zIndex: r + s.length - 1 - n,
+                                        zIndex: a + d.length - 1 - n,
                                         transform: `translateY(-${
-                                            h ? 65 * (s.length - n) : 0
+                                            f ? 65 * (d.length - n) : 0
                                         }px)`,
                                         transition: '0.75s'
                                     }
@@ -294,10 +336,10 @@
                                             fontSize: 'xx-small'
                                         }
                                     },
-                                    e().createElement(l, {
+                                    e().createElement(c, {
                                         'data-cy': `favorite-icon-${n}`,
                                         pathname: t,
-                                        pathnames: c
+                                        pathnames: r
                                     }),
                                     e().createElement(
                                         'span',
@@ -314,7 +356,7 @@
                                                 borderRadius: '6px',
                                                 padding: '5px 0',
                                                 position: 'absolute',
-                                                zIndex: r,
+                                                zIndex: a,
                                                 right: '105%',
                                                 top: '35%'
                                             }
@@ -329,28 +371,28 @@
                                         type: 'button',
                                         onClick: () => {
                                             !(function (t) {
-                                                a(
+                                                l(
                                                     this,
                                                     void 0,
                                                     void 0,
                                                     function* () {
-                                                        yield y(),
+                                                        yield v(),
                                                             g(!0),
                                                             x(!1),
-                                                            h && (yield m(750));
+                                                            f && (yield b(750));
                                                         const e = [];
-                                                        (s = Array.from(
-                                                            new Set(s)
+                                                        (d = Array.from(
+                                                            new Set(d)
                                                         )),
-                                                            s.forEach((n) => {
+                                                            d.forEach((n) => {
                                                                 n !== t &&
                                                                     e.push(n);
                                                             }),
-                                                            (s = e),
+                                                            (d = e),
                                                             localStorage.setItem(
                                                                 'favorites',
                                                                 JSON.stringify(
-                                                                    s
+                                                                    d
                                                                 )
                                                             ),
                                                             g(!1);
@@ -360,7 +402,7 @@
                                         },
                                         style: {
                                             display:
-                                                p[n] && h
+                                                p[n] && f
                                                     ? 'inline-block'
                                                     : 'none',
                                             position: 'fixed',
@@ -388,19 +430,19 @@
                                 {
                                     'data-cy': 'main-button',
                                     type: 'button',
-                                    onMouseOver: v,
-                                    onFocus: v,
+                                    onMouseOver: y,
+                                    onFocus: y,
                                     onClick: function () {
-                                        return a(
+                                        return l(
                                             this,
                                             void 0,
                                             void 0,
                                             function* () {
-                                                0 !== s.length &&
-                                                    (yield y(),
+                                                0 !== d.length &&
+                                                    (yield v(),
                                                     g(!0),
-                                                    x(!h),
-                                                    yield m(750),
+                                                    x(!f),
+                                                    yield b(750),
                                                     g(!1));
                                             }
                                         );
@@ -409,7 +451,7 @@
                                         position: 'fixed',
                                         bottom: i,
                                         right: o,
-                                        zIndex: r + 2 * s.length,
+                                        zIndex: a + 2 * d.length,
                                         width: '60px',
                                         height: '60px',
                                         backgroundColor: '#069cff',
@@ -421,7 +463,7 @@
                                         margin: 4
                                     }
                                 },
-                                `${s.length} ${b ? '⌛' : '🔗'}`
+                                `${d.length} ${h ? '⌛' : '🔗'}`
                             ),
                             e().createElement(
                                 'button',
@@ -433,7 +475,7 @@
                                         position: 'fixed',
                                         bottom: `calc(${i} + 45px)`,
                                         right: `calc(${o} - 20px)`,
-                                        zIndex: r + s.length,
+                                        zIndex: a + d.length,
                                         width: '25px',
                                         height: '25px',
                                         backgroundColor: '#b5e853',
