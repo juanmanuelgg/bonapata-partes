@@ -43,6 +43,7 @@
         "ts-jest": "^28.0.5",
         "typescript": "^4.7.4",
         "webpack": "^5.73.0",
+        "webpack-bundle-analyzer": "^4.5.0",
         "webpack-cli": "^4.10.0"
     },
     "peerDependencies": {
@@ -61,6 +62,7 @@
         "postbuild": "npm run create:styles && npm run create:docs",
         "create:styles": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
         "create:docs": "api-extractor run --local --verbose && api-documenter markdown --input-folder temp --output-folder docs && npm run format",
+        "analize": "webpack --mode production --config ./webpack.analyzer.config.js",
         "pretest": "npm run build",
         "test": "cypress run --component --env CI=true",
         "test:open": "cypress open --component --browser chrome"
