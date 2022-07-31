@@ -311,13 +311,13 @@ export const SpeedDial: React.FunctionComponent<ISpeedDialProps> = (
                     right,
                     width: '20px',
                     height: '20px',
-                    backgroundColor: '#f23a12',
-                    color: '#000',
                     fontWeight: 'bold',
                     borderRadius: '50px',
                     textAlign: 'center',
-                    padding: '0px'
+                    padding: '0px',
+                    fontSize: 'xx-small'
                 }}
+                className="bg-red-500 text-black dark:text-white"
             >
                 x
             </button>

@@ -296,7 +296,7 @@ export const SpeedDial = (props) => {
                                 ? 'inline-block'
                                 : 'none',
                         position: 'fixed',
-                        bottom: `calc(${bottom} + 45px)`,
+                        bottom,
                         right,
                         width: '20px',
                         height: '20px',

@@ -406,7 +406,7 @@
                                                     ? 'inline-block'
                                                     : 'none',
                                             position: 'fixed',
-                                            bottom: `calc(${i} + 45px)`,
+                                            bottom: i,
                                             right: o,
                                             width: '20px',
                                             height: '20px',
