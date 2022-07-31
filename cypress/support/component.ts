@@ -22,6 +22,7 @@ import './commands';
 
 // Ensure global styles are loaded
 import 'tailwindcss/tailwind.css';
+import 'tailwindcss/variants.css';
 
 // Augment the Cypress namespace to include type definitions for
 // your custom command.

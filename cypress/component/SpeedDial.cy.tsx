@@ -1,17 +1,22 @@
 import * as React from 'react';
 import { SpeedDial } from '../../src/components/SpeedDial';
+import { SpeedDial as SpeedDialDist } from '../../';
+
+const Component = Cypress.env('CI') ? SpeedDialDist : SpeedDial;
 
 describe('SpeedDial.cy.tsx', () => {
     // ============================================================================================
     // EXPECTED BEHAVIOUR
     // ============================================================================================
     it('Mounts', () => {
-        cy.mount(<SpeedDial />);
+        cy.mount(<Component />);
+
+        cy.pause();
     });
 
     it('Should default to an empty list of favorites', () => {
         // Arrange
-        cy.mount(<SpeedDial />);
+        cy.mount(<Component />);
         // Assert
         cy.getByDataCy('favorite-span-0').should('not.exist');
         // Act
@@ -22,7 +27,7 @@ describe('SpeedDial.cy.tsx', () => {
 
     it('Can add a favorite', () => {
         // Arrange
-        cy.mount(<SpeedDial />);
+        cy.mount(<Component />);
         // Act
         cy.getByDataCy('add-button').click();
         // Assert
@@ -31,7 +36,7 @@ describe('SpeedDial.cy.tsx', () => {
 
     it('Can remove a favorite', () => {
         // Arrange
-        cy.mount(<SpeedDial />);
+        cy.mount(<Component />);
         // Act
         cy.getByDataCy('add-button').click();
         // Assert
@@ -50,7 +55,7 @@ describe('SpeedDial.cy.tsx', () => {
         // Arrange
         cy.mount(
             <div className="dark">
-                <SpeedDial />
+                <Component />
             </div>
         );
         // Act
@@ -58,6 +63,8 @@ describe('SpeedDial.cy.tsx', () => {
         // Assert
         cy.getByDataCy('favorite-goto-button-0').should('be.visible');
         // TODO ... evaluar color
+
+        cy.pause();
     });
     // TODO ... make more rigorous tests
 });
