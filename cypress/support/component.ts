@@ -21,7 +21,7 @@ import './commands';
 // require('./commands')
 
 // Ensure global styles are loaded
-import '../../dist/output.css';
+import 'tailwindcss/tailwind.css';
 
 // Augment the Cypress namespace to include type definitions for
 // your custom command.

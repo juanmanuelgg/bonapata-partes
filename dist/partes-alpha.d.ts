@@ -7,6 +7,28 @@
 import { default as React_2 } from 'react';
 
 /**
+ * La interfaz que cumplen las propiedades del componente Notification.
+ * @public
+ */
+export declare interface INotificationProps {
+    /**
+     * Imagen que acompaña la notificación.
+     * @public
+     */
+    imageSrc?: string;
+    /**
+     * Titulo de la notificación.
+     * @public
+     */
+    title?: string;
+    /**
+     * Mensaje a mostrar en la notificación.
+     * @public
+     */
+    message?: string;
+}
+
+/**
  * La interfaz que cumplen las propiedades del componente SpeedDial.
  * @public
  */
@@ -57,6 +79,15 @@ export declare interface IStepperProps {
      */
     initial?: number;
 }
+
+/**
+ * Un contenedor rectangolar apara notificaciones con logo, remitente y mensaje.
+ * @param props - Valores de entrada del componente.
+ * @returns Un componente función de React renderizable.
+ * @public
+ */
+declare const Notification_2: React_2.FunctionComponent<INotificationProps>;
+export { Notification_2 as Notification };
 
 /**
  * Un boton de favoritos que muestra los pathnames que el usuario va guardando mientras navega las paginas.

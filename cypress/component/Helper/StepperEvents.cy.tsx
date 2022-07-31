@@ -5,7 +5,7 @@
  * https://docs.cypress.io/guides/component-testing/events-react
  */
 import * as React from 'react';
-import { StepperEvents } from '../../../';
+import { StepperEvents } from '../../../src/components/Helper/StepperEvents';
 
 const stepperSelector = '[data-testid=stepper]';
 const incrementSelector = '[aria-label=increment]';

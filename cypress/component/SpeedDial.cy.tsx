@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { SpeedDial } from '../../';
+import { SpeedDial } from '../../src/components/SpeedDial';
 
 describe('SpeedDial.cy.tsx', () => {
     // ============================================================================================
