@@ -241,7 +241,7 @@ export const SpeedDial = (props) => {
                     type: 'button',
                     onClick: () => goToFavorite(favorite),
                     className:
-                        'bg-white dark:bg-slate-800 text-black dark:text-white',
+                        'bg-orange-100 dark:bg-slate-800 text-black dark:text-white',
                     style: {
                         display: 'inline-block',
                         position: 'fixed',
@@ -253,7 +253,8 @@ export const SpeedDial = (props) => {
                         fontWeight: 'bold',
                         borderRadius: '50px',
                         textAlign: 'center',
-                        fontSize: 'xx-small'
+                        fontSize: 'xx-small',
+                        boxShadow: '2px 2px 3px #999'
                     }
                 },
                 React.createElement(IconContent, {
@@ -304,7 +305,8 @@ export const SpeedDial = (props) => {
                         borderRadius: '50px',
                         textAlign: 'center',
                         padding: '0px',
-                        fontSize: 'xx-small'
+                        fontSize: 'x-small',
+                        boxShadow: '2px 2px 3px #999'
                     },
                     className: 'bg-red-500 text-black dark:text-white'
                 },

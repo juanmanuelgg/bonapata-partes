@@ -1,47 +1,47 @@
-!(function (t, e) {
+!(function (e, t) {
     'object' == typeof exports && 'object' == typeof module
-        ? (module.exports = e(require('react')))
+        ? (module.exports = t(require('react')))
         : 'function' == typeof define && define.amd
-        ? define(['react'], e)
+        ? define(['react'], t)
         : 'object' == typeof exports
-        ? (exports.partes = e(require('react')))
-        : (t.partes = e(t.React));
-})(self, (t) =>
+        ? (exports.partes = t(require('react')))
+        : (e.partes = t(e.React));
+})(self, (e) =>
     (() => {
         'use strict';
-        var e = {
-                359: (e) => {
-                    e.exports = t;
+        var t = {
+                359: (t) => {
+                    t.exports = e;
                 }
             },
             n = {};
-        function o(t) {
-            var i = n[t];
+        function o(e) {
+            var i = n[e];
             if (void 0 !== i) return i.exports;
-            var a = (n[t] = { exports: {} });
-            return e[t](a, a.exports, o), a.exports;
+            var a = (n[e] = { exports: {} });
+            return t[e](a, a.exports, o), a.exports;
         }
-        (o.n = (t) => {
-            var e = t && t.__esModule ? () => t.default : () => t;
-            return o.d(e, { a: e }), e;
+        (o.n = (e) => {
+            var t = e && e.__esModule ? () => e.default : () => e;
+            return o.d(t, { a: t }), t;
         }),
-            (o.d = (t, e) => {
-                for (var n in e)
-                    o.o(e, n) &&
-                        !o.o(t, n) &&
-                        Object.defineProperty(t, n, {
+            (o.d = (e, t) => {
+                for (var n in t)
+                    o.o(t, n) &&
+                        !o.o(e, n) &&
+                        Object.defineProperty(e, n, {
                             enumerable: !0,
-                            get: e[n]
+                            get: t[n]
                         });
             }),
-            (o.o = (t, e) => Object.prototype.hasOwnProperty.call(t, e)),
-            (o.r = (t) => {
+            (o.o = (e, t) => Object.prototype.hasOwnProperty.call(e, t)),
+            (o.r = (e) => {
                 'undefined' != typeof Symbol &&
                     Symbol.toStringTag &&
-                    Object.defineProperty(t, Symbol.toStringTag, {
+                    Object.defineProperty(e, Symbol.toStringTag, {
                         value: 'Module'
                     }),
-                    Object.defineProperty(t, '__esModule', { value: !0 });
+                    Object.defineProperty(e, '__esModule', { value: !0 });
             });
         var i = {};
         return (
@@ -53,15 +53,15 @@
                         Stepper: () => n,
                         StepperEvents: () => a
                     });
-                var t = o(359),
-                    e = o.n(t);
+                var e = o(359),
+                    t = o.n(e);
                 const n = (n) => {
                         const { initial: o = 0 } = n,
-                            [i, a] = (0, t.useState)(o);
-                        return e().createElement(
+                            [i, a] = (0, e.useState)(o);
+                        return t().createElement(
                             'div',
                             { 'data-testid': 'stepper' },
-                            e().createElement(
+                            t().createElement(
                                 'button',
                                 {
                                     'aria-label': 'decrement',
@@ -70,7 +70,7 @@
                                 '-'
                             ),
                             i,
-                            e().createElement(
+                            t().createElement(
                                 'button',
                                 {
                                     'aria-label': 'increment',
@@ -83,65 +83,65 @@
                     a = (n) => {
                         const {
                                 initial: o = 0,
-                                onChange: i = (t) => {
-                                    console.log(t);
+                                onChange: i = (e) => {
+                                    console.log(e);
                                 }
                             } = n,
-                            [a, r] = (0, t.useState)(o);
-                        return e().createElement(
+                            [a, r] = (0, e.useState)(o);
+                        return t().createElement(
                             'div',
                             { 'data-testid': 'stepper' },
-                            e().createElement(
+                            t().createElement(
                                 'button',
                                 {
                                     'aria-label': 'decrement',
                                     onClick: () => {
-                                        const t = a - 1;
-                                        r(t), i(t);
+                                        const e = a - 1;
+                                        r(e), i(e);
                                     }
                                 },
                                 '-'
                             ),
                             a,
-                            e().createElement(
+                            t().createElement(
                                 'button',
                                 {
                                     'aria-label': 'increment',
                                     onClick: () => {
-                                        const t = a + 1;
-                                        r(t), i(t);
+                                        const e = a + 1;
+                                        r(e), i(e);
                                     }
                                 },
                                 '+'
                             )
                         );
                     },
-                    r = (t) => {
+                    r = (e) => {
                         const {
                             imageSrc: n,
                             title: o = 'Platform',
                             message: i = 'You have a new message!'
-                        } = t;
-                        return e().createElement(
+                        } = e;
+                        return t().createElement(
                             'div',
                             {
                                 className:
                                     'p-6 max-w-sm mx-auto bg-white dark:bg-black rounded-xl shadow-lg flex items-center space-x-4'
                             },
                             n &&
-                                e().createElement(
+                                t().createElement(
                                     'div',
                                     { className: 'shrink-0' },
-                                    e().createElement('img', {
+                                    t().createElement('img', {
                                         className:
                                             'h-12 w-12 text-black dark:text-white',
                                         src: n
                                     })
                                 ),
-                            e().createElement(
+                            t().createElement(
                                 'div',
                                 null,
-                                e().createElement(
+                                t().createElement(
                                     'div',
                                     {
                                         className:
@@ -149,7 +149,7 @@
                                     },
                                     o
                                 ),
-                                e().createElement(
+                                t().createElement(
                                     'p',
                                     { className: 'text-slate-500' },
                                     i
@@ -157,49 +157,49 @@
                             )
                         );
                     };
-                var l = function (t, e, n, o) {
+                var l = function (e, t, n, o) {
                     return new (n || (n = Promise))(function (i, a) {
-                        function r(t) {
+                        function r(e) {
                             try {
-                                c(o.next(t));
-                            } catch (t) {
-                                a(t);
+                                c(o.next(e));
+                            } catch (e) {
+                                a(e);
                             }
                         }
-                        function l(t) {
+                        function l(e) {
                             try {
-                                c(o.throw(t));
-                            } catch (t) {
-                                a(t);
+                                c(o.throw(e));
+                            } catch (e) {
+                                a(e);
                             }
                         }
-                        function c(t) {
-                            var e;
-                            t.done
-                                ? i(t.value)
-                                : ((e = t.value),
-                                  e instanceof n
-                                      ? e
-                                      : new n(function (t) {
-                                            t(e);
+                        function c(e) {
+                            var t;
+                            e.done
+                                ? i(e.value)
+                                : ((t = e.value),
+                                  t instanceof n
+                                      ? t
+                                      : new n(function (e) {
+                                            e(t);
                                         })).then(r, l);
                         }
-                        c((o = o.apply(t, e || [])).next());
+                        c((o = o.apply(e, t || [])).next());
                     });
                 };
-                const c = (t) => {
-                        const { pathname: n, pathnames: o = new Map() } = t;
-                        return e().createElement(
-                            e().Fragment,
+                const c = (e) => {
+                        const { pathname: n, pathnames: o = new Map() } = e;
+                        return t().createElement(
+                            t().Fragment,
                             null,
                             o.has(n)
-                                ? e().createElement('img', {
+                                ? t().createElement('img', {
                                       src: o.get(n),
                                       alt: n,
                                       width: '32px',
                                       height: '32px'
                                   })
-                                : e().createElement('span', null, n)
+                                : t().createElement('span', null, n)
                         );
                     },
                     s = (n) => {
@@ -210,87 +210,87 @@
                                 pathnames: r = new Map()
                             } = n,
                             s = localStorage.getItem('favorites') || '[]';
-                        let d = (0, t.useMemo)(() => {
-                            const t = Array.from(new Set(JSON.parse(s)));
+                        let d = (0, e.useMemo)(() => {
+                            const e = Array.from(new Set(JSON.parse(s)));
                             return (
-                                s.length !== t.length &&
+                                s.length !== e.length &&
                                     localStorage.setItem(
                                         'favorites',
-                                        JSON.stringify(t)
+                                        JSON.stringify(e)
                                     ),
-                                t
+                                e
                             );
                         }, [w]);
                         const u = new Array(d.length);
                         u.fill(!1);
-                        const [p, m] = (0, t.useState)(u),
-                            [f, x] = (0, t.useState)(!1),
-                            [h, g] = (0, t.useState)(!1);
-                        function b(t) {
+                        const [p, x] = (0, e.useState)(u),
+                            [m, f] = (0, e.useState)(!1),
+                            [h, b] = (0, e.useState)(!1);
+                        function g(e) {
                             return l(this, void 0, void 0, function* () {
-                                return new Promise((e) => {
-                                    setTimeout(e, t);
+                                return new Promise((t) => {
+                                    setTimeout(t, e);
                                 });
                             });
                         }
                         function v() {
                             return l(this, void 0, void 0, function* () {
-                                for (let t = 0; h && t < 10; t += 1)
-                                    yield b(125);
+                                for (let e = 0; h && e < 10; e += 1)
+                                    yield g(125);
                             });
                         }
                         function y() {
                             return l(this, void 0, void 0, function* () {
-                                f ||
+                                m ||
                                     0 === d.length ||
                                     (yield v(),
-                                    g(!0),
-                                    x(!0),
-                                    yield b(750),
-                                    g(!1));
+                                    b(!0),
+                                    f(!0),
+                                    yield g(750),
+                                    b(!1));
                             });
                         }
                         function w() {
                             return l(this, void 0, void 0, function* () {
                                 yield v(),
-                                    g(!0),
+                                    b(!0),
                                     d.push(window.location.pathname),
                                     localStorage.setItem(
                                         'favorites',
                                         JSON.stringify(d)
                                     ),
-                                    x(!0),
-                                    f || (yield b(750)),
-                                    g(!1);
+                                    f(!0),
+                                    m || (yield g(750)),
+                                    b(!1);
                             });
                         }
-                        function k(t) {
+                        function S(e) {
                             return l(this, void 0, void 0, function* () {
-                                (p[t] = !0), m([...p]);
+                                (p[e] = !0), x([...p]);
                             });
                         }
-                        function S(t) {
+                        function k(e) {
                             return l(this, void 0, void 0, function* () {
-                                (p[t] = !1), m([...p]);
+                                (p[e] = !1), x([...p]);
                             });
                         }
-                        const E = d.map((t, n) =>
-                            e().createElement(
+                        const E = d.map((e, n) =>
+                            t().createElement(
                                 'span',
                                 {
                                     'data-cy': `favorite-span-${n}`,
-                                    key: t,
+                                    key: e,
                                     onMouseOver: () => {
-                                        k(n);
+                                        S(n);
                                     },
                                     onFocus: () => {
-                                        k(n);
+                                        S(n);
                                     },
                                     onMouseOut: () => {
-                                        S(n);
+                                        k(n);
                                     },
                                     onBlur: () => {
-                                        S(n);
+                                        k(n);
                                     },
                                     style: {
                                         display: 'inline-block',
@@ -299,29 +299,29 @@
                                         right: 0,
                                         zIndex: a + d.length - 1 - n,
                                         transform: `translateY(-${
-                                            f ? 65 * (d.length - n) : 0
+                                            m ? 65 * (d.length - n) : 0
                                         }px)`,
                                         transition: '0.75s'
                                     }
                                 },
-                                e().createElement(
+                                t().createElement(
                                     'button',
                                     {
                                         'data-cy': `favorite-goto-button-${n}`,
                                         type: 'button',
                                         onClick: () => {
                                             return (
-                                                (e = t),
+                                                (t = e),
                                                 void (
                                                     window.location.pathname !==
-                                                        e &&
-                                                    window.location.assign(e)
+                                                        t &&
+                                                    window.location.assign(t)
                                                 )
                                             );
-                                            var e;
+                                            var t;
                                         },
                                         className:
-                                            'bg-white dark:bg-slate-800 text-black dark:text-white',
+                                            'bg-orange-100 dark:bg-slate-800 text-black dark:text-white',
                                         style: {
                                             display: 'inline-block',
                                             position: 'fixed',
@@ -333,15 +333,16 @@
                                             fontWeight: 'bold',
                                             borderRadius: '50px',
                                             textAlign: 'center',
-                                            fontSize: 'xx-small'
+                                            fontSize: 'xx-small',
+                                            boxShadow: '2px 2px 3px #999'
                                         }
                                     },
-                                    e().createElement(c, {
+                                    t().createElement(c, {
                                         'data-cy': `favorite-icon-${n}`,
-                                        pathname: t,
+                                        pathname: e,
                                         pathnames: r
                                     }),
-                                    e().createElement(
+                                    t().createElement(
                                         'span',
                                         {
                                             'data-cy': `favorite-tooltip-${n}`,
@@ -361,48 +362,48 @@
                                                 top: '35%'
                                             }
                                         },
-                                        t
+                                        e
                                     )
                                 ),
-                                e().createElement(
+                                t().createElement(
                                     'button',
                                     {
                                         'data-cy': `favorite-delete-button-${n}`,
                                         type: 'button',
                                         onClick: () => {
-                                            !(function (t) {
+                                            !(function (e) {
                                                 l(
                                                     this,
                                                     void 0,
                                                     void 0,
                                                     function* () {
                                                         yield v(),
-                                                            g(!0),
-                                                            x(!1),
-                                                            f && (yield b(750));
-                                                        const e = [];
+                                                            b(!0),
+                                                            f(!1),
+                                                            m && (yield g(750));
+                                                        const t = [];
                                                         (d = Array.from(
                                                             new Set(d)
                                                         )),
                                                             d.forEach((n) => {
-                                                                n !== t &&
-                                                                    e.push(n);
+                                                                n !== e &&
+                                                                    t.push(n);
                                                             }),
-                                                            (d = e),
+                                                            (d = t),
                                                             localStorage.setItem(
                                                                 'favorites',
                                                                 JSON.stringify(
                                                                     d
                                                                 )
                                                             ),
-                                                            g(!1);
+                                                            b(!1);
                                                     }
                                                 );
-                                            })(t);
+                                            })(e);
                                         },
                                         style: {
                                             display:
-                                                p[n] && f
+                                                p[n] && m
                                                     ? 'inline-block'
                                                     : 'none',
                                             position: 'fixed',
@@ -414,7 +415,8 @@
                                             borderRadius: '50px',
                                             textAlign: 'center',
                                             padding: '0px',
-                                            fontSize: 'xx-small'
+                                            fontSize: 'x-small',
+                                            boxShadow: '2px 2px 3px #999'
                                         },
                                         className:
                                             'bg-red-500 text-black dark:text-white'
@@ -423,10 +425,10 @@
                                 )
                             )
                         );
-                        return e().createElement(
-                            e().Fragment,
+                        return t().createElement(
+                            t().Fragment,
                             null,
-                            e().createElement(
+                            t().createElement(
                                 'button',
                                 {
                                     'data-cy': 'main-button',
@@ -441,10 +443,10 @@
                                             function* () {
                                                 0 !== d.length &&
                                                     (yield v(),
-                                                    g(!0),
-                                                    x(!f),
-                                                    yield b(750),
-                                                    g(!1));
+                                                    b(!0),
+                                                    f(!m),
+                                                    yield g(750),
+                                                    b(!1));
                                             }
                                         );
                                     },
@@ -466,7 +468,7 @@
                                 },
                                 `${d.length} ${h ? '⌛' : '🔗'}`
                             ),
-                            e().createElement(
+                            t().createElement(
                                 'button',
                                 {
                                     'data-cy': 'add-button',
