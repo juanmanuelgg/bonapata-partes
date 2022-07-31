@@ -7,6 +7,13 @@
 import { default as React_2 } from 'react';
 
 /**
+ * Un contenedor rectangolar apara notificaciones con logo, remitente y mensaje.
+ * @returns Un componente función de React renderizable.
+ * @public
+ */
+export declare const DarkModeToggle: React_2.FunctionComponent;
+
+/**
  * La interfaz que cumplen las propiedades del componente Notification.
  * @public
  */

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import DarkModeToogle from '../support/DarkModeToogle';
 import { SpeedDial } from '../../src/components/SpeedDial';
 import { SpeedDial as SpeedDialDist } from '../../';
 
@@ -10,8 +11,6 @@ describe('SpeedDial.cy.tsx', () => {
     // ============================================================================================
     it('Mounts', () => {
         cy.mount(<Component />);
-
-        cy.pause();
     });
 
     it('Should default to an empty list of favorites', () => {
@@ -54,17 +53,16 @@ describe('SpeedDial.cy.tsx', () => {
     it('Show dark mode', () => {
         // Arrange
         cy.mount(
-            <div className="dark">
+            <>
                 <Component />
-            </div>
+                <DarkModeToogle />
+            </>
         );
         // Act
         cy.getByDataCy('add-button').click();
         // Assert
         cy.getByDataCy('favorite-goto-button-0').should('be.visible');
         // TODO ... evaluar color
-
-        cy.pause();
     });
     // TODO ... make more rigorous tests
 });

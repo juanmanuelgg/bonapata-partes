@@ -6,6 +6,9 @@
 import { default as React_2 } from 'react';
 
 // @public
+export const DarkModeToggle: React_2.FunctionComponent;
+
+// @public
 export interface INotificationProps {
     imageSrc?: string;
     message?: string;
