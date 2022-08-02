@@ -11,7 +11,7 @@ Maybe you were intentionally letting dist/ behind.
 
 dist/ is tracked so the project could be imported from github.
 
-    npm install "https://github.com/juanmanuelgg/bonapata-partes.git#branch-name" --save
+  npm install "https://github.com/juanmanuelgg/bonapata-partes.git#branch-name" --save
 
 If you know what you are doing you can disable this check using:
 
