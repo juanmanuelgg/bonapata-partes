@@ -100,9 +100,15 @@
                                               width: '20',
                                               viewBox: '0 0 20 20'
                                           },
+                                          t().createElement('circle', {
+                                              fill: '#000000',
+                                              cx: '10',
+                                              cy: '10',
+                                              r: '10'
+                                          }),
                                           t().createElement('path', {
-                                              fill: encodeURIComponent('#fff'),
-                                              d: 'M4.2 2.5l-.7 1.8-1.8.7 1.8.7.7 1.8.6-1.8L6.7 5l-1.9-.7-.6-1.8zm15 8.3a6.7 6.7 0 11-6.6-6.6 5.8 5.8 0 006.6 6.6z'
+                                              fill: '#ffffff',
+                                              d: 'M10,0 C21,0 21,21 10,20 C20,12 12,0 10,0'
                                           })
                                       )
                                     : t().createElement(
@@ -113,9 +119,17 @@
                                               width: '20',
                                               viewBox: '0 0 20 20'
                                           },
-                                          t().createElement('path', {
-                                              fill: encodeURIComponent('#fff'),
-                                              d: 'M9.305 1.667V3.75h1.389V1.667h-1.39zm-4.707 1.95l-.982.982L5.09 6.072l.982-.982-1.473-1.473zm10.802 0L13.927 5.09l.982.982 1.473-1.473-.982-.982zM10 5.139a4.872 4.872 0 00-4.862 4.86A4.872 4.872 0 0010 14.862 4.872 4.872 0 0014.86 10 4.872 4.872 0 0010 5.139zm0 1.389A3.462 3.462 0 0113.471 10a3.462 3.462 0 01-3.473 3.472A3.462 3.462 0 016.527 10 3.462 3.462 0 0110 6.528zM1.665 9.305v1.39h2.083v-1.39H1.666zm14.583 0v1.39h2.084v-1.39h-2.084zM5.09 13.928L3.616 15.4l.982.982 1.473-1.473-.982-.982zm9.82 0l-.982.982 1.473 1.473.982-.982-1.473-1.473zM9.305 16.25v2.083h1.389V16.25h-1.39z'
+                                          t().createElement('circle', {
+                                              fill: '#999999',
+                                              cx: '10',
+                                              cy: '10',
+                                              r: '10'
+                                          }),
+                                          t().createElement('circle', {
+                                              fill: '#ffff00',
+                                              cx: '10',
+                                              cy: '10',
+                                              r: '9'
                                           })
                                       )
                             )
@@ -290,8 +304,8 @@
                         const u = new Array(d.length);
                         u.fill(!1);
                         const [p, m] = (0, e.useState)(u),
-                            [h, f] = (0, e.useState)(!1),
-                            [x, g] = (0, e.useState)(!1);
+                            [f, x] = (0, e.useState)(!1),
+                            [h, g] = (0, e.useState)(!1);
                         function b(e) {
                             return c(this, void 0, void 0, function* () {
                                 return new Promise((t) => {
@@ -301,17 +315,17 @@
                         }
                         function v() {
                             return c(this, void 0, void 0, function* () {
-                                for (let e = 0; x && e < 10; e += 1)
+                                for (let e = 0; h && e < 10; e += 1)
                                     yield b(125);
                             });
                         }
                         function y() {
                             return c(this, void 0, void 0, function* () {
-                                h ||
+                                f ||
                                     0 === d.length ||
                                     (yield v(),
                                     g(!0),
-                                    f(!0),
+                                    x(!0),
                                     yield b(750),
                                     g(!1));
                             });
@@ -325,8 +339,8 @@
                                         'favorites',
                                         JSON.stringify(d)
                                     ),
-                                    f(!0),
-                                    h || (yield b(750)),
+                                    x(!0),
+                                    f || (yield b(750)),
                                     g(!1);
                             });
                         }
@@ -335,12 +349,12 @@
                                 (p[e] = !0), m([...p]);
                             });
                         }
-                        function S(e) {
+                        function E(e) {
                             return c(this, void 0, void 0, function* () {
                                 (p[e] = !1), m([...p]);
                             });
                         }
-                        const E = d.map((e, n) =>
+                        const S = d.map((e, n) =>
                             t().createElement(
                                 'span',
                                 {
@@ -353,10 +367,10 @@
                                         k(n);
                                     },
                                     onMouseOut: () => {
-                                        S(n);
+                                        E(n);
                                     },
                                     onBlur: () => {
-                                        S(n);
+                                        E(n);
                                     },
                                     style: {
                                         display: 'inline-block',
@@ -365,7 +379,7 @@
                                         right: 0,
                                         zIndex: i + d.length - 1 - n,
                                         transform: `translateY(-${
-                                            h ? 65 * (d.length - n) : 0
+                                            f ? 65 * (d.length - n) : 0
                                         }px)`,
                                         transition: '0.75s'
                                     }
@@ -445,8 +459,8 @@
                                                     function* () {
                                                         yield v(),
                                                             g(!0),
-                                                            f(!1),
-                                                            h && (yield b(750));
+                                                            x(!1),
+                                                            f && (yield b(750));
                                                         const t = [];
                                                         (d = Array.from(
                                                             new Set(d)
@@ -469,7 +483,7 @@
                                         },
                                         style: {
                                             display:
-                                                p[n] && h
+                                                p[n] && f
                                                     ? 'inline-block'
                                                     : 'none',
                                             position: 'fixed',
@@ -510,7 +524,7 @@
                                                 0 !== d.length &&
                                                     (yield v(),
                                                     g(!0),
-                                                    f(!h),
+                                                    x(!f),
                                                     yield b(750),
                                                     g(!1));
                                             }
@@ -532,7 +546,7 @@
                                         margin: 4
                                     }
                                 },
-                                `${d.length} ${x ? '⌛' : '🔗'}`
+                                `${d.length} ${h ? '⌛' : '🔗'}`
                             ),
                             t().createElement(
                                 'button',
@@ -558,7 +572,7 @@
                                 },
                                 '+'
                             ),
-                            E
+                            S
                         );
                     };
             })(),
