@@ -173,6 +173,29 @@
             "preserveMemberOrder": false,
             "members": [
                 {
+                    "kind": "Variable",
+                    "canonicalReference": "@bonapata/partes!DarkModeToggle:var",
+                    "docComment": "/**\n * Un boton que permite quitar o poner la clase dark del elemento html. Lo que controla el modo oscuro o claro de los otros componentes.\n *\n * @returns Un componente función de React renderizable.\n *\n * @public\n */\n",
+                    "excerptTokens": [
+                        {
+                            "kind": "Content",
+                            "text": "DarkModeToggle: "
+                        },
+                        {
+                            "kind": "Reference",
+                            "text": "React.FunctionComponent",
+                            "canonicalReference": "@types/react!~React.FunctionComponent:interface"
+                        }
+                    ],
+                    "isReadonly": true,
+                    "releaseTag": "Public",
+                    "name": "DarkModeToggle",
+                    "variableTypeTokenRange": {
+                        "startIndex": 1,
+                        "endIndex": 2
+                    }
+                },
+                {
                     "kind": "Interface",
                     "canonicalReference": "@bonapata/partes!INotificationProps:interface",
                     "docComment": "/**\n * La interfaz que cumplen las propiedades del componente Notification.\n *\n * @public\n */\n",

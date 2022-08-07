@@ -7,6 +7,14 @@
 import { default as React_2 } from 'react';
 
 /**
+ * Un boton que permite quitar o poner la clase dark del elemento html.
+ * Lo que controla el modo oscuro o claro de los otros componentes.
+ * @returns Un componente función de React renderizable.
+ * @public
+ */
+export declare const DarkModeToggle: React_2.FunctionComponent;
+
+/**
  * La interfaz que cumplen las propiedades del componente Notification.
  * @public
  */
