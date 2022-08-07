@@ -175,7 +175,7 @@
                 {
                     "kind": "Variable",
                     "canonicalReference": "@bonapata/partes!DarkModeToggle:var",
-                    "docComment": "/**\n * Un contenedor rectangolar apara notificaciones con logo, remitente y mensaje.\n *\n * @returns Un componente función de React renderizable.\n *\n * @public\n */\n",
+                    "docComment": "/**\n * Un boton que permite quitar o poner la clase dark del elemento html. Lo que controla el modo oscuro o claro de los otros componentes.\n *\n * @returns Un componente función de React renderizable.\n *\n * @public\n */\n",
                     "excerptTokens": [
                         {
                             "kind": "Content",

@@ -4,7 +4,7 @@
 
 ## DarkModeToggle variable
 
-Un contenedor rectangolar apara notificaciones con logo, remitente y mensaje.
+Un boton que permite quitar o poner la clase dark del elemento html. Lo que controla el modo oscuro o claro de los otros componentes.
 
 <b>Signature:</b>
 
