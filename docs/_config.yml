@@ -3,7 +3,7 @@ author: Juan Manuel González Garzón
 email: jmgonzalezgarzon@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Notas, scripts, algoritmos de uso diario y documentación de algunos proyectos.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/bonapata-partes" # the subpath of your site, e.g. /blog
 url: "https://juanmanuelgg.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 remote_theme: pages-themes/hacker@v0.2.0
