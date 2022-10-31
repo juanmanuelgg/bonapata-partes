@@ -10,15 +10,15 @@ La librería puede ser usada desde un tag `<script>` del navegador.
 
 ```html
 <script
-    src="https://unpkg.com/react@18/umd/react.production.min.js"
+    src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"
     crossorigin
 ></script>
 <script
-    src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+    src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"
     crossorigin
 ></script>
 <script
-    src="https://unpkg.com/@bonapata/partes@0.2.11/dist/umd/partes.js"
+    src="https://unpkg.com/@bonapata/partes@0.2.12/dist/umd/partes.js"
     crossorigin
 ></script>
 <script>
@@ -42,7 +42,7 @@ La librería puede ser usada desde un tag `<script>` del navegador.
     pathnames.set('/gpg', 'assets/images/privacyBorder.png');
     pathnames.set('/strace', 'assets/images/strace.svg');
 
-    const props = { pathnames };
+    const props = { pathnames, right: '150px', bottom: '150px', zIndex: 9 };
     const element = React.createElement(partes.SpeedDial, props);
     const container = document.getElementById('app');
 
