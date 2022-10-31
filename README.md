@@ -44,7 +44,7 @@ La librería puede ser usada desde un tag `<script>` del navegador.
 
     const props = { pathnames, right: '150px', bottom: '150px', zIndex: 9 };
     const element = React.createElement(partes.SpeedDial, props);
-    const container = document.getElementById('app');
+    const container = document.getElementById('speed-dial');
 
     ReactDOM.render(element, container);
 </script>
