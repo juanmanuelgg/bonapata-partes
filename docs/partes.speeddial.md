@@ -6,7 +6,7 @@
 
 Un boton de favoritos que muestra los pathnames que el usuario va guardando mientras navega las paginas. Conocido como Speed Dial, permite el acceso rapido a las paginas de interes del usuario.
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 SpeedDial: React.FunctionComponent<ISpeedDialProps>;

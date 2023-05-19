@@ -6,7 +6,7 @@
 
 Valor inicial del contador.
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 initial?: number;

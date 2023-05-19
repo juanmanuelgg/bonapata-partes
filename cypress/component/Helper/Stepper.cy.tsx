@@ -55,7 +55,8 @@ describe('<Stepper>', () => {
         cy.get(stepperSelector).should('contain.text', 100);
         cy.get(incrementSelector).click();
         cy.get(stepperSelector).should('contain.text', 101);
-        cy.get(decrementSelector).click().click();
+        cy.get(decrementSelector).click();
+        cy.get(decrementSelector).click();
         cy.get(stepperSelector).should('contain.text', 99);
     });
 });

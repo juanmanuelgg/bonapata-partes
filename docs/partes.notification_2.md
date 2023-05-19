@@ -6,7 +6,7 @@
 
 Un contenedor rectangolar apara notificaciones con logo, remitente y mensaje.
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 Notification: React.FunctionComponent<INotificationProps>;
