@@ -5,7 +5,10 @@
  * https://docs.cypress.io/guides/component-testing/events-react
  */
 import * as React from 'react';
-import { Stepper } from '../../../dist/esm/components/Helper/StepperEvents';
+import { StepperEvents } from '../../../src/components/Helper/StepperEvents';
+import { StepperEvents as StepperEventsDist } from '../../../';
+
+const Component = Cypress.env('CI') ? StepperEventsDist : StepperEvents;
 
 const stepperSelector = '[data-testid=stepper]';
 const incrementSelector = '[aria-label=increment]';
@@ -13,26 +16,26 @@ const decrementSelector = '[aria-label=decrement]';
 
 describe('<Stepper>', () => {
     it('mounts', () => {
-        cy.mount(<Stepper />);
+        cy.mount(<Component />);
     });
 
     it('stepper should default to 0', () => {
         // Arrange
-        cy.mount(<Stepper />);
+        cy.mount(<Component />);
         // Assert
         cy.get(stepperSelector).should('contain.text', 0);
     });
 
     it('supports an "initial" prop to set the value', () => {
         // Arrange
-        cy.mount(<Stepper initial={100} />);
+        cy.mount(<Component initial={100} />);
         // Assert
         cy.get(stepperSelector).should('contain.text', 100);
     });
 
     it('can be incremented', () => {
         // Arrange
-        cy.mount(<Stepper />);
+        cy.mount(<Component />);
         // Act
         cy.get(incrementSelector).click();
         // Assert
@@ -41,7 +44,7 @@ describe('<Stepper>', () => {
 
     it('can be decremented', () => {
         // Arrange
-        cy.mount(<Stepper />);
+        cy.mount(<Component />);
         // Act
         cy.get(decrementSelector).click();
         // Assert
@@ -49,7 +52,7 @@ describe('<Stepper>', () => {
     });
 
     it('has an initial counter that can be incremented and decremented', () => {
-        cy.mount(<Stepper initial={100} />);
+        cy.mount(<Component initial={100} />);
         cy.get(stepperSelector).should('contain.text', 100);
         cy.get(incrementSelector).click();
         cy.get(stepperSelector).should('contain.text', 101);
@@ -60,24 +63,10 @@ describe('<Stepper>', () => {
     it('clicking + fires a change event with the incremented value', () => {
         // Arrange
         const onChangeSpy = cy.spy().as('onChangeSpy');
-        cy.mount(<Stepper />, { props: { onChange: onChangeSpy } });
-    });
-
-    it('clicking + fires a change event with the incremented value', () => {
-        // Arrange
-        const onChangeSpy = cy.spy().as('onChangeSpy');
-        cy.mount(<Stepper onChange={onChangeSpy} />);
-        // Act
-        cy.get(incrementSelector).click();
-    });
-
-    it('clicking + fires a change event with the incremented value', () => {
-        // Arrange
-        const onChangeSpy = cy.spy().as('onChangeSpy');
-        cy.mount(<Stepper onChange={onChangeSpy} />);
+        cy.mount(<Component initial={150} onChange={onChangeSpy} />);
         // Act
         cy.get(incrementSelector).click();
         // Assert
-        cy.get('@onChangeSpy').should('have.been.called.with', 1);
+        cy.get('@onChangeSpy').should('have.been.called.with', 151);
     });
 });

@@ -1,17 +1,21 @@
 import * as React from 'react';
-import { SpeedDial } from '../../dist/esm/components/SpeedDial';
+import DarkModeToogle from '../support/DarkModeToogle';
+import { SpeedDial } from '../../src/components/SpeedDial';
+import { SpeedDial as SpeedDialDist } from '../../';
+
+const Component = Cypress.env('CI') ? SpeedDialDist : SpeedDial;
 
 describe('SpeedDial.cy.tsx', () => {
     // ============================================================================================
     // EXPECTED BEHAVIOUR
     // ============================================================================================
     it('Mounts', () => {
-        cy.mount(<SpeedDial />);
+        cy.mount(<Component />);
     });
 
     it('Should default to an empty list of favorites', () => {
         // Arrange
-        cy.mount(<SpeedDial />);
+        cy.mount(<Component />);
         // Assert
         cy.getByDataCy('favorite-span-0').should('not.exist');
         // Act
@@ -22,7 +26,7 @@ describe('SpeedDial.cy.tsx', () => {
 
     it('Can add a favorite', () => {
         // Arrange
-        cy.mount(<SpeedDial />);
+        cy.mount(<Component />);
         // Act
         cy.getByDataCy('add-button').click();
         // Assert
@@ -31,7 +35,7 @@ describe('SpeedDial.cy.tsx', () => {
 
     it('Can remove a favorite', () => {
         // Arrange
-        cy.mount(<SpeedDial />);
+        cy.mount(<Component />);
         // Act
         cy.getByDataCy('add-button').click();
         // Assert
@@ -44,6 +48,21 @@ describe('SpeedDial.cy.tsx', () => {
         cy.getByDataCy('favorite-delete-button-0').click();
         // Assert
         cy.getByDataCy('favorite-span-0').should('not.exist');
+    });
+
+    it('Show dark mode', () => {
+        // Arrange
+        cy.mount(
+            <>
+                <Component />
+                <DarkModeToogle />
+            </>
+        );
+        // Act
+        cy.getByDataCy('add-button').click();
+        // Assert
+        cy.getByDataCy('favorite-goto-button-0').should('be.visible');
+        // TODO ... evaluar color
     });
     // TODO ... make more rigorous tests
 });

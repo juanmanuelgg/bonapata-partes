@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-undef
 module.exports = {
     resolve: {
         extensions: ['.js', '.jsx', '.ts', '.tsx']
@@ -11,8 +12,19 @@ module.exports = {
                     extensions: ['.js', '.jsx', '.ts', '.tsx']
                 },
                 use: {
-                    loader: 'babel-loader'
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [
+                            '@babel/preset-react',
+                            '@babel/preset-env',
+                            '@babel/preset-flow'
+                        ]
+                    }
                 }
+            },
+            {
+                test: /\.css$/i,
+                use: ['style-loader', 'css-loader', 'postcss-loader']
             }
         ]
     }
