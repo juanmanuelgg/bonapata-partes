@@ -3,5 +3,7 @@
     "editor.bracketPairColorization.enabled": true,
     "editor.formatOnSave": true,
     "editor.formatOnPaste": true,
-    "files.associations": { "*.json": "jsonc" }
+    "files.associations": { "*.json": "jsonc" },
+    "files.eol": "\n",
+    "workbench.iconTheme": "material-icon-theme"
 }
