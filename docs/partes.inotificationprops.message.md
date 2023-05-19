@@ -6,7 +6,7 @@
 
 Mensaje a mostrar en la notificación.
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 message?: string;

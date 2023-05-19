@@ -1,8 +1,8 @@
 {
     "metadata": {
         "toolPackage": "@microsoft/api-extractor",
-        "toolVersion": "7.30.0",
-        "schemaVersion": 1009,
+        "toolVersion": "7.34.8",
+        "schemaVersion": 1011,
         "oldestForwardsCompatibleVersion": 1001,
         "tsdocConfig": {
             "$schema": "https://developer.microsoft.com/json-schemas/tsdoc/v0/tsdoc.schema.json",
@@ -187,6 +187,7 @@
                             "canonicalReference": "@types/react!React.FunctionComponent:interface"
                         }
                     ],
+                    "fileUrlPath": "src/components/DarkModeToggle.tsx",
                     "isReadonly": true,
                     "releaseTag": "Public",
                     "name": "DarkModeToggle",
@@ -205,6 +206,7 @@
                             "text": "export interface INotificationProps "
                         }
                     ],
+                    "fileUrlPath": "src/components/Notification.tsx",
                     "releaseTag": "Public",
                     "name": "INotificationProps",
                     "preserveMemberOrder": false,
@@ -303,6 +305,7 @@
                             "text": "export interface ISpeedDialProps "
                         }
                     ],
+                    "fileUrlPath": "src/components/SpeedDial.tsx",
                     "releaseTag": "Public",
                     "name": "ISpeedDialProps",
                     "preserveMemberOrder": false,
@@ -433,6 +436,7 @@
                             "text": "export interface IStepperEventsProps "
                         }
                     ],
+                    "fileUrlPath": "src/components/Helper/StepperEvents.tsx",
                     "releaseTag": "Public",
                     "name": "IStepperEventsProps",
                     "preserveMemberOrder": false,
@@ -477,6 +481,7 @@
                             "text": "export interface IStepperProps "
                         }
                     ],
+                    "fileUrlPath": "src/components/Helper/Stepper.tsx",
                     "releaseTag": "Public",
                     "name": "IStepperProps",
                     "preserveMemberOrder": false,
@@ -539,6 +544,7 @@
                             "text": ">"
                         }
                     ],
+                    "fileUrlPath": "src/components/Notification.tsx",
                     "isReadonly": true,
                     "releaseTag": "Public",
                     "name": "Notification_2",
@@ -575,6 +581,7 @@
                             "text": ">"
                         }
                     ],
+                    "fileUrlPath": "src/components/SpeedDial.tsx",
                     "isReadonly": true,
                     "releaseTag": "Public",
                     "name": "SpeedDial",
@@ -611,6 +618,7 @@
                             "text": ">"
                         }
                     ],
+                    "fileUrlPath": "src/components/Helper/Stepper.tsx",
                     "isReadonly": true,
                     "releaseTag": "Public",
                     "name": "Stepper",
@@ -647,6 +655,7 @@
                             "text": ">"
                         }
                     ],
+                    "fileUrlPath": "src/components/Helper/StepperEvents.tsx",
                     "isReadonly": true,
                     "releaseTag": "Public",
                     "name": "StepperEvents",

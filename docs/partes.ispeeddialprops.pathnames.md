@@ -6,7 +6,7 @@
 
 El mapa con todos los pathnames esperados y la url de su icono.
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 pathnames?: Map<string, string>;

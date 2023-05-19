@@ -6,7 +6,7 @@
 
 Cantidad de capaz que se elevara el Speed Dial. Por defecto es 9.
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 zIndex?: number;

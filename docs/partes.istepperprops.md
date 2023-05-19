@@ -6,7 +6,7 @@
 
 La interfaz que cumplen las propiedades del componente Stepper.
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 export interface IStepperProps
@@ -14,6 +14,6 @@ export interface IStepperProps
 
 ## Properties
 
-| Property                                      | Modifiers | Type   | Description                                   |
-| --------------------------------------------- | --------- | ------ | --------------------------------------------- |
-| [initial?](./partes.istepperprops.initial.md) |           | number | <i>(Optional)</i> Valor inicial del contador. |
+| Property                                      | Modifiers | Type   | Description                              |
+| --------------------------------------------- | --------- | ------ | ---------------------------------------- |
+| [initial?](./partes.istepperprops.initial.md) |           | number | _(Optional)_ Valor inicial del contador. |
