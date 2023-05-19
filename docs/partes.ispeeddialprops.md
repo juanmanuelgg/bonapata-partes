@@ -6,7 +6,7 @@
 
 La interfaz que cumplen las propiedades del componente SpeedDial.
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 export interface ISpeedDialProps
@@ -14,9 +14,9 @@ export interface ISpeedDialProps
 
 ## Properties
 
-| Property                                            | Modifiers | Type                      | Description                                                                                             |
-| --------------------------------------------------- | --------- | ------------------------- | ------------------------------------------------------------------------------------------------------- |
-| [bottom?](./partes.ispeeddialprops.bottom.md)       |           | string                    | <i>(Optional)</i> Distancia del borde inferior a la que se ubicara el Speed Dial. Por defecto son 40px. |
-| [pathnames?](./partes.ispeeddialprops.pathnames.md) |           | Map&lt;string, string&gt; | <i>(Optional)</i> El mapa con todos los pathnames esperados y la url de su icono.                       |
-| [right?](./partes.ispeeddialprops.right.md)         |           | string                    | <i>(Optional)</i> Distancia del borde derecho a la que se ubicara el Speed Dial. Por defecto son 40px.  |
-| [zIndex?](./partes.ispeeddialprops.zindex.md)       |           | number                    | <i>(Optional)</i> Cantidad de capaz que se elevara el Speed Dial. Por defecto es 9.                     |
+| Property                                            | Modifiers | Type                      | Description                                                                                        |
+| --------------------------------------------------- | --------- | ------------------------- | -------------------------------------------------------------------------------------------------- |
+| [bottom?](./partes.ispeeddialprops.bottom.md)       |           | string                    | _(Optional)_ Distancia del borde inferior a la que se ubicara el Speed Dial. Por defecto son 40px. |
+| [pathnames?](./partes.ispeeddialprops.pathnames.md) |           | Map&lt;string, string&gt; | _(Optional)_ El mapa con todos los pathnames esperados y la url de su icono.                       |
+| [right?](./partes.ispeeddialprops.right.md)         |           | string                    | _(Optional)_ Distancia del borde derecho a la que se ubicara el Speed Dial. Por defecto son 40px.  |
+| [zIndex?](./partes.ispeeddialprops.zindex.md)       |           | number                    | _(Optional)_ Cantidad de capaz que se elevara el Speed Dial. Por defecto es 9.                     |

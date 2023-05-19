@@ -6,7 +6,7 @@
 
 La interfaz que cumplen las propiedades del componente Notification.
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 export interface INotificationProps
@@ -14,8 +14,8 @@ export interface INotificationProps
 
 ## Properties
 
-| Property                                             | Modifiers | Type   | Description                                             |
-| ---------------------------------------------------- | --------- | ------ | ------------------------------------------------------- |
-| [imageSrc?](./partes.inotificationprops.imagesrc.md) |           | string | <i>(Optional)</i> Imagen que acompaña la notificación.  |
-| [message?](./partes.inotificationprops.message.md)   |           | string | <i>(Optional)</i> Mensaje a mostrar en la notificación. |
-| [title?](./partes.inotificationprops.title.md)       |           | string | <i>(Optional)</i> Titulo de la notificación.            |
+| Property                                             | Modifiers | Type   | Description                                        |
+| ---------------------------------------------------- | --------- | ------ | -------------------------------------------------- |
+| [imageSrc?](./partes.inotificationprops.imagesrc.md) |           | string | _(Optional)_ Imagen que acompaña la notificación.  |
+| [message?](./partes.inotificationprops.message.md)   |           | string | _(Optional)_ Mensaje a mostrar en la notificación. |
+| [title?](./partes.inotificationprops.title.md)       |           | string | _(Optional)_ Titulo de la notificación.            |

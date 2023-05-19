@@ -6,7 +6,7 @@
 
 Titulo de la notificación.
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 title?: string;

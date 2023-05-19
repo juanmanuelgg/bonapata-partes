@@ -6,7 +6,7 @@
 
 Distancia del borde derecho a la que se ubicara el Speed Dial. Por defecto son 40px.
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 right?: string;

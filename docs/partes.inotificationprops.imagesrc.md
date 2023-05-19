@@ -6,7 +6,7 @@
 
 Imagen que acompaña la notificación.
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 imageSrc?: string;

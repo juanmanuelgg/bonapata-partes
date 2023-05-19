@@ -6,7 +6,7 @@
 
 Componente que muestra un contador que puede incrementar o decrementar su valor por 1 unidad cada vez.
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 StepperEvents: React.FunctionComponent<IStepperEventsProps>;
