@@ -20,7 +20,7 @@
         "@microsoft/api-documenter": "^7.19.0",
         "@microsoft/api-extractor": "^7.28.6",
         "@types/jest": "^29.0.0",
-        "@types/node": "^18.16.13",
+        "@types/node": "^20.2.5",
         "@types/react": "^18.0.17",
         "@types/react-dom": "^18.2.4",
         "@typescript-eslint/eslint-plugin": "^5.30.6",
