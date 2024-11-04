@@ -8,19 +8,107 @@ Una librería libre de componentes para React, escrita en Typescript.
 
 ## Interfaces
 
-| Interface                                              | Description                                                           |
-| ------------------------------------------------------ | --------------------------------------------------------------------- |
-| [INotificationProps](./partes.inotificationprops.md)   | La interfaz que cumplen las propiedades del componente Notification.  |
-| [ISpeedDialProps](./partes.ispeeddialprops.md)         | La interfaz que cumplen las propiedades del componente SpeedDial.     |
-| [IStepperEventsProps](./partes.isteppereventsprops.md) | La interfaz que cumplen las propiedades del componente StepperEvents. |
-| [IStepperProps](./partes.istepperprops.md)             | La interfaz que cumplen las propiedades del componente Stepper.       |
+<table><thead><tr><th>
+
+Interface
+
+</th><th>
+
+Description
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[INotificationProps](./partes.inotificationprops.md)
+
+</td><td>
+
+La interfaz que cumplen las propiedades del componente Notification.
+
+</td></tr>
+<tr><td>
+
+[ISpeedDialProps](./partes.ispeeddialprops.md)
+
+</td><td>
+
+La interfaz que cumplen las propiedades del componente SpeedDial.
+
+</td></tr>
+<tr><td>
+
+[IStepperEventsProps](./partes.isteppereventsprops.md)
+
+</td><td>
+
+La interfaz que cumplen las propiedades del componente StepperEvents.
+
+</td></tr>
+<tr><td>
+
+[IStepperProps](./partes.istepperprops.md)
+
+</td><td>
+
+La interfaz que cumplen las propiedades del componente Stepper.
+
+</td></tr>
+</tbody></table>
 
 ## Variables
 
-| Variable                                     | Description                                                                                                                                                                                       |
-| -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [DarkModeToggle](./partes.darkmodetoggle.md) | Un boton que permite quitar o poner la clase dark del elemento html. Lo que controla el modo oscuro o claro de los otros componentes.                                                             |
-| [Notification_2](./partes.notification_2.md) | Un contenedor rectangolar apara notificaciones con logo, remitente y mensaje.                                                                                                                     |
-| [SpeedDial](./partes.speeddial.md)           | Un boton de favoritos que muestra los pathnames que el usuario va guardando mientras navega las paginas. Conocido como Speed Dial, permite el acceso rapido a las paginas de interes del usuario. |
-| [Stepper](./partes.stepper.md)               | Componente que muestra un contador que puede incrementar o decrementar su valor por 1 unidad cada vez.                                                                                            |
-| [StepperEvents](./partes.stepperevents.md)   | Componente que muestra un contador que puede incrementar o decrementar su valor por 1 unidad cada vez.                                                                                            |
+<table><thead><tr><th>
+
+Variable
+
+</th><th>
+
+Description
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[DarkModeToggle](./partes.darkmodetoggle.md)
+
+</td><td>
+
+Un boton que permite quitar o poner la clase dark del elemento html. Lo que controla el modo oscuro o claro de los otros componentes.
+
+</td></tr>
+<tr><td>
+
+[Notification_2](./partes.notification_2.md)
+
+</td><td>
+
+Un contenedor rectangolar apara notificaciones con logo, remitente y mensaje.
+
+</td></tr>
+<tr><td>
+
+[SpeedDial](./partes.speeddial.md)
+
+</td><td>
+
+Un boton de favoritos que muestra los pathnames que el usuario va guardando mientras navega las paginas. Conocido como Speed Dial, permite el acceso rapido a las paginas de interes del usuario.
+
+</td></tr>
+<tr><td>
+
+[Stepper](./partes.stepper.md)
+
+</td><td>
+
+Componente que muestra un contador que puede incrementar o decrementar su valor por 1 unidad cada vez.
+
+</td></tr>
+<tr><td>
+
+[StepperEvents](./partes.stepperevents.md)
+
+</td><td>
+
+Componente que muestra un contador que puede incrementar o decrementar su valor por 1 unidad cada vez.
+
+</td></tr>
+</tbody></table>
