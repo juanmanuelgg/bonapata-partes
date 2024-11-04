@@ -64,8 +64,8 @@
         "create:docs": "api-extractor run --local --verbose && api-documenter markdown --input-folder temp --output-folder docs && npm run format",
         "analize": "webpack --mode production --config ./webpack.analyzer.config.js",
         "pretest": "npm run build",
-        "test": "cypress run --component --env CI=true",
-        "test:open": "cypress open --component --browser chrome"
+        "serve": "cypress open --component --browser chrome",
+        "test": "cypress run --component --env CI=true"
     },
     "repository": {
         "type": "git",
