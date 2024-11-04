@@ -4,6 +4,7 @@ import webpackPreprocessor from '@cypress/webpack-preprocessor';
 const options = { webpackOptions: require('./webpack.config.js') };
 
 const config = defineConfig({
+    projectId: '4dcvkq',
     component: {
         devServer: {
             framework: 'react',
