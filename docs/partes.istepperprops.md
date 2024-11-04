@@ -14,6 +14,36 @@ export interface IStepperProps
 
 ## Properties
 
-| Property                                      | Modifiers | Type   | Description                              |
-| --------------------------------------------- | --------- | ------ | ---------------------------------------- |
-| [initial?](./partes.istepperprops.initial.md) |           | number | _(Optional)_ Valor inicial del contador. |
+<table><thead><tr><th>
+
+Property
+
+</th><th>
+
+Modifiers
+
+</th><th>
+
+Type
+
+</th><th>
+
+Description
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[initial?](./partes.istepperprops.initial.md)
+
+</td><td>
+
+</td><td>
+
+number
+
+</td><td>
+
+_(Optional)_ Valor inicial del contador.
+
+</td></tr>
+</tbody></table>
