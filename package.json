@@ -53,8 +53,8 @@
     "scripts": {
         "add-hooks": "scripts/add-hooks.sh",
         "format": "prettier --write ./",
-        "lint": "eslint ./",
-        "lint:fix": "eslint --fix ./",
+        "lint": "npx eslint ./",
+        "lint:fix": "npx eslint --fix ./",
         "prebuild": "npm run lint",
         "build": "rm -rf dist/ && npm run build:esm && npm run build:umd",
         "build:esm": "tsc",
