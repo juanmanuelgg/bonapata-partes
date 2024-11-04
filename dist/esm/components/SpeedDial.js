@@ -104,7 +104,7 @@ export const SpeedDial = (props) => {
         return __awaiter(this, void 0, void 0, function* () {
             // Se hace el calculo 6 veces en el tiempo que tiende ha de estar puesto el lock
             // si se queda puesto se espera 4 timepos mas pero finalmente se libera el proceso
-            // eslint-disable-next-line no-await-in-loop
+
             for (let rety = 0; lock && rety < 10; rety += 1) yield delay(125);
         });
     }

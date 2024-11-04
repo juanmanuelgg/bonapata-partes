@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-undef
 module.exports = {
     entry: './dist/esm/index.js',
     output: {
