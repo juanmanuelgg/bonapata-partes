@@ -32,7 +32,7 @@ Para compilar el código necesitarás tener instalado:
 Para compilar el código, ejecuta el siguiente comando:
 
 ```bash
-npm ci --legacy-peer-deps
+npm ci
 npm run build
 ```
 
