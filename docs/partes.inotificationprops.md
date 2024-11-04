@@ -14,8 +14,66 @@ export interface INotificationProps
 
 ## Properties
 
-| Property                                             | Modifiers | Type   | Description                                        |
-| ---------------------------------------------------- | --------- | ------ | -------------------------------------------------- |
-| [imageSrc?](./partes.inotificationprops.imagesrc.md) |           | string | _(Optional)_ Imagen que acompaña la notificación.  |
-| [message?](./partes.inotificationprops.message.md)   |           | string | _(Optional)_ Mensaje a mostrar en la notificación. |
-| [title?](./partes.inotificationprops.title.md)       |           | string | _(Optional)_ Titulo de la notificación.            |
+<table><thead><tr><th>
+
+Property
+
+</th><th>
+
+Modifiers
+
+</th><th>
+
+Type
+
+</th><th>
+
+Description
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[imageSrc?](./partes.inotificationprops.imagesrc.md)
+
+</td><td>
+
+</td><td>
+
+string
+
+</td><td>
+
+_(Optional)_ Imagen que acompaña la notificación.
+
+</td></tr>
+<tr><td>
+
+[message?](./partes.inotificationprops.message.md)
+
+</td><td>
+
+</td><td>
+
+string
+
+</td><td>
+
+_(Optional)_ Mensaje a mostrar en la notificación.
+
+</td></tr>
+<tr><td>
+
+[title?](./partes.inotificationprops.title.md)
+
+</td><td>
+
+</td><td>
+
+string
+
+</td><td>
+
+_(Optional)_ Titulo de la notificación.
+
+</td></tr>
+</tbody></table>
