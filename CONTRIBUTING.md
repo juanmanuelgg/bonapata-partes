@@ -32,7 +32,7 @@ Para compilar el código necesitarás tener instalado:
 Para compilar el código, ejecuta el siguiente comando:
 
 ```bash
-npm i --force
+npm i
 npm run build
 ```
 
