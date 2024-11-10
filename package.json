@@ -24,7 +24,7 @@
         "@types/react": "^18.0.17",
         "@types/react-dom": "^18.2.4",
         "@typescript-eslint/eslint-plugin": "^6.1.0",
-        "@typescript-eslint/parser": "^6.2.0",
+        "@typescript-eslint/parser": "^8.13.0",
         "autoprefixer": "^10.4.7",
         "babel-loader": "^9.1.2",
         "css-loader": "^6.7.1",
