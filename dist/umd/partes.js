@@ -358,9 +358,7 @@
                                 bottom: 0,
                                 right: 0,
                                 zIndex: o + c.length - 1 - i,
-                                transform: `translateY(-${
-                                    f ? 65 * (c.length - i) : 0
-                                }px)`,
+                                transform: `translateY(-${f ? 65 * (c.length - i) : 0}px)`,
                                 transition: '0.75s'
                             }
                         },
