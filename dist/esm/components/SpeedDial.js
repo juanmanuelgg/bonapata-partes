@@ -227,9 +227,7 @@ export const SpeedDial = (props) => {
                     bottom: 0,
                     right: 0,
                     zIndex: zIndex + favorites.length - 1 - index,
-                    transform: `translateY(-${
-                        openSpeedDial ? 65 * (favorites.length - index) : 0
-                    }px)`,
+                    transform: `translateY(-${openSpeedDial ? 65 * (favorites.length - index) : 0}px)`,
                     transition: '0.75s'
                 }
             },
