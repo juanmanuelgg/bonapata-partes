@@ -46,8 +46,8 @@
         "webpack-cli": "^5.1.4"
     },
     "peerDependencies": {
-        "react": "^17 || ^18",
-        "react-dom": "^17 || ^18"
+        "react": "^17 || ^18 || ^19",
+        "react-dom": "^17 || ^18 || ^19"
     },
     "scripts": {
         "add-hooks": "scripts/add-hooks.sh",
