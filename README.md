@@ -10,15 +10,15 @@ La librería puede ser usada desde un tag `<script>` del navegador.
 
 ```html
 <script
-    src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"
+    src="https://unpkg.com/react@18/umd/react.production.min.js""
     crossorigin
 ></script>
 <script
-    src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"
+    src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
     crossorigin
 ></script>
 <script
-    src="https://unpkg.com/@bonapata/partes@0.2.12/dist/umd/partes.js"
+    src="https://unpkg.com/@bonapata/partes@0.4.0/dist/umd/partes.js"
     crossorigin
 ></script>
 <script>
