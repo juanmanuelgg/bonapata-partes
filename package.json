@@ -15,7 +15,7 @@
         "@babel/preset-env": "^7.26.0",
         "@babel/preset-flow": "^7.25.9",
         "@babel/preset-react": "^7.25.9",
-        "@cypress/webpack-preprocessor": "^6.0.2",
+        "@cypress/webpack-preprocessor": "^7.0.1",
         "@microsoft/api-documenter": "^7.25.21",
         "@microsoft/api-extractor": "^7.47.11",
         "@types/jest": "^29.5.14",
