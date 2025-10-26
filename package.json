@@ -20,14 +20,14 @@
         "@microsoft/api-extractor": "^7.47.11",
         "@types/jest": "^30.0.0",
         "@types/node": "^22.10.1",
-        "@types/react": "^18.3.12",
+        "@types/react": "^19.0.1",
         "@types/react-dom": "^18.3.1",
         "@typescript-eslint/eslint-plugin": "^8.13.0",
         "@typescript-eslint/parser": "^8.13.0",
         "autoprefixer": "^10.4.20",
         "babel-loader": "^9.2.1",
         "css-loader": "^7.1.2",
-        "cypress": "^13.15.2",
+        "cypress": "^13.16.1",
         "eslint": "^9.14.0",
         "eslint-config-prettier": "^10.0.1",
         "eslint-plugin-cypress": "^4.1.0",
@@ -35,8 +35,8 @@
         "postcss": "^8.4.47",
         "postcss-loader": "^8.1.1",
         "prettier": "^3.3.3",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0",
         "style-loader": "^4.0.0",
         "tailwindcss": "^3.4.14",
         "ts-jest": "^29.2.5",
@@ -46,8 +46,8 @@
         "webpack-cli": "^6.0.1"
     },
     "peerDependencies": {
-        "react": "^17 || ^18",
-        "react-dom": "^17 || ^18"
+        "react": "^17 || ^18 || ^19",
+        "react-dom": "^17 || ^18 || ^19"
     },
     "scripts": {
         "add-hooks": "scripts/add-hooks.sh",
