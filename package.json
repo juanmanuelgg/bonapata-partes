@@ -1,6 +1,6 @@
 {
     "name": "@bonapata/partes",
-    "version": "0.4.2",
+    "version": "0.5.0",
     "description": "Una librería libre de componentes para React, escrita en Typescript.",
     "main": "./dist/umd/partes.js",
     "browser": "./dist/umd/partes.js",
