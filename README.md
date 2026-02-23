@@ -9,18 +9,9 @@ La librería puede ser usada desde un tag `<script>` del navegador.
 ## Ejemplo
 
 ```html
-<script
-    src="https://unpkg.com/react@19/umd/react.production.min.js""
-    crossorigin
-></script>
-<script
-    src="https://unpkg.com/react-dom@19/umd/react-dom.production.min.js"
-    crossorigin
-></script>
-<script
-    src="https://unpkg.com/@bonapata/partes@0.5.1/dist/umd/partes.js"
-    crossorigin
-></script>
+<script src="https://unpkg.com/react@19/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@19/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/@bonapata/partes@0.5.2/dist/umd/partes.js" crossorigin></script>
 <script>
     const pathnames = new Map();
     pathnames.set('/javascript', 'assets/images/js.png');
@@ -42,9 +33,9 @@ La librería puede ser usada desde un tag `<script>` del navegador.
     pathnames.set('/gpg', 'assets/images/privacyBorder.png');
     pathnames.set('/strace', 'assets/images/strace.svg');
 
-    const props = { pathnames, right: '150px', bottom: '150px', zIndex: 9 };
+    const props = { pathnames };
     const element = React.createElement(partes.SpeedDial, props);
-    const container = document.getElementById('speed-dial');
+    const container = document.getElementById('app');
 
     ReactDOM.render(element, container);
 </script>
