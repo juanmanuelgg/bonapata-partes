@@ -9,9 +9,18 @@ La librería puede ser usada desde un tag `<script>` del navegador.
 ## Ejemplo
 
 ```html
-<script src="https://unpkg.com/react@19/umd/react.production.min.js" crossorigin></script>
-<script src="https://unpkg.com/react-dom@19/umd/react-dom.production.min.js" crossorigin></script>
-<script src="https://unpkg.com/@bonapata/partes@0.5.2/dist/umd/partes.js" crossorigin></script>
+<script
+    src="https://unpkg.com/react@19/umd/react.production.min.js"
+    crossorigin
+></script>
+<script
+    src="https://unpkg.com/react-dom@19/umd/react-dom.production.min.js"
+    crossorigin
+></script>
+<script
+    src="https://unpkg.com/@bonapata/partes@0.5.2/dist/umd/partes.js"
+    crossorigin
+></script>
 <script>
     const pathnames = new Map();
     pathnames.set('/javascript', 'assets/images/js.png');
