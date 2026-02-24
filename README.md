@@ -18,7 +18,7 @@ La librería puede ser usada desde un tag `<script>` del navegador.
     crossorigin
 ></script>
 <script
-    src="https://unpkg.com/@bonapata/partes@0.5.3/dist/umd/partes.js"
+    src="https://unpkg.com/@bonapata/partes@0.5.4/dist/umd/partes.js"
     crossorigin
 ></script>
 <script>
