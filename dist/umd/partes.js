@@ -10,7 +10,7 @@
     (() => {
         'use strict';
         var t = {
-                12: (t) => {
+                12(t) {
                     t.exports = e;
                 }
             },
@@ -19,11 +19,11 @@
             var a = n[e];
             if (void 0 !== a) return a.exports;
             var i = (n[e] = { exports: {} });
-            return t[e](i, i.exports, o), i.exports;
+            return (t[e](i, i.exports, o), i.exports);
         }
-        (o.n = (e) => {
+        ((o.n = (e) => {
             var t = e && e.__esModule ? () => e.default : () => e;
-            return o.d(t, { a: t }), t;
+            return (o.d(t, { a: t }), t);
         }),
             (o.d = (e, t) => {
                 for (var n in t)
@@ -36,44 +36,44 @@
             }),
             (o.o = (e, t) => Object.prototype.hasOwnProperty.call(e, t)),
             (o.r = (e) => {
-                'undefined' != typeof Symbol &&
+                ('undefined' != typeof Symbol &&
                     Symbol.toStringTag &&
                     Object.defineProperty(e, Symbol.toStringTag, {
                         value: 'Module'
                     }),
-                    Object.defineProperty(e, '__esModule', { value: !0 });
-            });
+                    Object.defineProperty(e, '__esModule', { value: !0 }));
+            }));
         var a = {};
-        o.r(a),
+        (o.r(a),
             o.d(a, {
                 DarkModeToggle: () => l,
                 Notification: () => d,
                 SpeedDial: () => m,
                 Stepper: () => c,
                 StepperEvents: () => s
-            });
+            }));
         var i = o(12),
             r = o.n(i);
         const l = () => {
                 const [e, t] = (0, i.useState)(!1);
                 function n(n) {
-                    n
+                    (n
                         ? document.documentElement.classList.add('dark')
                         : document.documentElement.classList.remove('dark'),
                         localStorage.setItem('dark-mode-bonapata', `${e}`),
-                        t(n);
+                        t(n));
                 }
                 return (
                     (0, i.useEffect)(() => {
                         let e = !1;
-                        (e =
+                        ((e =
                             'dark-mode-bonapata' in localStorage
                                 ? 'true' ===
                                   localStorage.getItem('dark-mode-bonapata')
                                 : window.matchMedia(
                                       '(prefers-color-scheme: dark)'
                                   ).matches),
-                            n(e);
+                            n(e));
                     }, []),
                     r().createElement(
                         'button',
@@ -162,7 +162,7 @@
                             'aria-label': 'decrement',
                             onClick: () => {
                                 const e = o - 1;
-                                a(e), n(e);
+                                (a(e), n(e));
                             }
                         },
                         '-'
@@ -174,7 +174,7 @@
                             'aria-label': 'increment',
                             onClick: () => {
                                 const e = o + 1;
-                                a(e), n(e);
+                                (a(e), n(e));
                             }
                         },
                         '+'
@@ -312,7 +312,7 @@
                 }
                 function w() {
                     return u(this, void 0, void 0, function* () {
-                        yield v(),
+                        (yield v(),
                             g(!0),
                             c.push(window.location.pathname),
                             localStorage.setItem(
@@ -321,17 +321,17 @@
                             ),
                             x(!0),
                             f || (yield b(750)),
-                            g(!1);
+                            g(!1));
                     });
                 }
                 function k(e) {
                     return u(this, void 0, void 0, function* () {
-                        (d[e] = !0), m([...d]);
+                        ((d[e] = !0), m([...d]));
                     });
                 }
                 function E(e) {
                     return u(this, void 0, void 0, function* () {
-                        (d[e] = !1), m([...d]);
+                        ((d[e] = !1), m([...d]));
                     });
                 }
                 const S = c.map((e, i) =>
@@ -428,12 +428,12 @@
                                 onClick: () => {
                                     !(function (e) {
                                         u(this, void 0, void 0, function* () {
-                                            yield v(),
+                                            (yield v(),
                                                 g(!0),
                                                 x(!1),
-                                                f && (yield b(750));
+                                                f && (yield b(750)));
                                             const t = [];
-                                            (c = Array.from(new Set(c))),
+                                            ((c = Array.from(new Set(c))),
                                                 c.forEach((n) => {
                                                     n !== e && t.push(n);
                                                 }),
@@ -442,7 +442,7 @@
                                                     'favorites',
                                                     JSON.stringify(c)
                                                 ),
-                                                g(!1);
+                                                g(!1));
                                         });
                                     })(e);
                                 },

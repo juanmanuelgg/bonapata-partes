@@ -24,8 +24,8 @@ favor, asegúrate de que tu código sigue las [guías de estilo] del proyecto.
 
 Para compilar el código necesitarás tener instalado:
 
--   [Node.js] >= 16.0.0
--   [npm] >= 8.0.0
+- [Node.js] >= 16.0.0
+- [npm] >= 8.0.0
 
 ### Compilación
 
