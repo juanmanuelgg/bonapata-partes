@@ -8,6 +8,37 @@ import { default as React_2 } from 'react';
 // @public
 export const DarkModeToggle: React_2.FunctionComponent;
 
+// @public (undocumented)
+export const Dock: React_2.FC<DockProps>;
+
+// @public (undocumented)
+export interface DockItem {
+    // (undocumented)
+    disabled?: boolean;
+    // (undocumented)
+    icon: React_2.ReactNode;
+    // (undocumented)
+    label: string;
+    // (undocumented)
+    onClick?: () => void;
+}
+
+// @public (undocumented)
+export interface DockProps {
+    // (undocumented)
+    'aria-label'?: string;
+    // (undocumented)
+    className?: string;
+    // (undocumented)
+    distance?: number;
+    // (undocumented)
+    iconSize?: number;
+    // (undocumented)
+    items: DockItem[];
+    // (undocumented)
+    magnification?: number;
+}
+
 // @public
 export interface INotificationProps {
     imageSrc?: string;

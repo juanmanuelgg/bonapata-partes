@@ -14,6 +14,24 @@ import { default as React_2 } from 'react';
  */
 export declare const DarkModeToggle: React_2.FunctionComponent;
 
+export declare const Dock: React_2.FC<DockProps>;
+
+export declare interface DockItem {
+    icon: React_2.ReactNode;
+    label: string;
+    onClick?: () => void;
+    disabled?: boolean;
+}
+
+export declare interface DockProps {
+    items: DockItem[];
+    iconSize?: number;
+    magnification?: number;
+    distance?: number;
+    className?: string;
+    'aria-label'?: string;
+}
+
 /**
  * La interfaz que cumplen las propiedades del componente Notification.
  * @public

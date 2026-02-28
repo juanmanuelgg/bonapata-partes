@@ -1,7 +1,7 @@
 {
     "metadata": {
         "toolPackage": "@microsoft/api-extractor",
-        "toolVersion": "7.57.4",
+        "toolVersion": "7.57.6",
         "schemaVersion": 1011,
         "oldestForwardsCompatibleVersion": 1001,
         "tsdocConfig": {
@@ -211,6 +211,355 @@
                         "startIndex": 1,
                         "endIndex": 2
                     }
+                },
+                {
+                    "kind": "Variable",
+                    "canonicalReference": "@bonapata/partes!Dock:var",
+                    "docComment": "",
+                    "excerptTokens": [
+                        {
+                            "kind": "Content",
+                            "text": "Dock: "
+                        },
+                        {
+                            "kind": "Reference",
+                            "text": "React.FC",
+                            "canonicalReference": "@types/react!React.FC:type"
+                        },
+                        {
+                            "kind": "Content",
+                            "text": "<"
+                        },
+                        {
+                            "kind": "Reference",
+                            "text": "DockProps",
+                            "canonicalReference": "@bonapata/partes!DockProps:interface"
+                        },
+                        {
+                            "kind": "Content",
+                            "text": ">"
+                        }
+                    ],
+                    "fileUrlPath": "src/components/Dock/Dock.tsx",
+                    "isReadonly": true,
+                    "releaseTag": "Public",
+                    "name": "Dock",
+                    "variableTypeTokenRange": {
+                        "startIndex": 1,
+                        "endIndex": 5
+                    }
+                },
+                {
+                    "kind": "Interface",
+                    "canonicalReference": "@bonapata/partes!DockItem:interface",
+                    "docComment": "",
+                    "excerptTokens": [
+                        {
+                            "kind": "Content",
+                            "text": "export interface DockItem "
+                        }
+                    ],
+                    "fileUrlPath": "src/components/Dock/Dock.tsx",
+                    "releaseTag": "Public",
+                    "name": "DockItem",
+                    "preserveMemberOrder": false,
+                    "members": [
+                        {
+                            "kind": "PropertySignature",
+                            "canonicalReference": "@bonapata/partes!DockItem#disabled:member",
+                            "docComment": "",
+                            "excerptTokens": [
+                                {
+                                    "kind": "Content",
+                                    "text": "disabled?: "
+                                },
+                                {
+                                    "kind": "Content",
+                                    "text": "boolean"
+                                },
+                                {
+                                    "kind": "Content",
+                                    "text": ";"
+                                }
+                            ],
+                            "isReadonly": false,
+                            "isOptional": true,
+                            "releaseTag": "Public",
+                            "name": "disabled",
+                            "propertyTypeTokenRange": {
+                                "startIndex": 1,
+                                "endIndex": 2
+                            }
+                        },
+                        {
+                            "kind": "PropertySignature",
+                            "canonicalReference": "@bonapata/partes!DockItem#icon:member",
+                            "docComment": "",
+                            "excerptTokens": [
+                                {
+                                    "kind": "Content",
+                                    "text": "icon: "
+                                },
+                                {
+                                    "kind": "Reference",
+                                    "text": "React.ReactNode",
+                                    "canonicalReference": "@types/react!React.ReactNode:type"
+                                },
+                                {
+                                    "kind": "Content",
+                                    "text": ";"
+                                }
+                            ],
+                            "isReadonly": false,
+                            "isOptional": false,
+                            "releaseTag": "Public",
+                            "name": "icon",
+                            "propertyTypeTokenRange": {
+                                "startIndex": 1,
+                                "endIndex": 2
+                            }
+                        },
+                        {
+                            "kind": "PropertySignature",
+                            "canonicalReference": "@bonapata/partes!DockItem#label:member",
+                            "docComment": "",
+                            "excerptTokens": [
+                                {
+                                    "kind": "Content",
+                                    "text": "label: "
+                                },
+                                {
+                                    "kind": "Content",
+                                    "text": "string"
+                                },
+                                {
+                                    "kind": "Content",
+                                    "text": ";"
+                                }
+                            ],
+                            "isReadonly": false,
+                            "isOptional": false,
+                            "releaseTag": "Public",
+                            "name": "label",
+                            "propertyTypeTokenRange": {
+                                "startIndex": 1,
+                                "endIndex": 2
+                            }
+                        },
+                        {
+                            "kind": "PropertySignature",
+                            "canonicalReference": "@bonapata/partes!DockItem#onClick:member",
+                            "docComment": "",
+                            "excerptTokens": [
+                                {
+                                    "kind": "Content",
+                                    "text": "onClick?: "
+                                },
+                                {
+                                    "kind": "Content",
+                                    "text": "() => void"
+                                },
+                                {
+                                    "kind": "Content",
+                                    "text": ";"
+                                }
+                            ],
+                            "isReadonly": false,
+                            "isOptional": true,
+                            "releaseTag": "Public",
+                            "name": "onClick",
+                            "propertyTypeTokenRange": {
+                                "startIndex": 1,
+                                "endIndex": 2
+                            }
+                        }
+                    ],
+                    "extendsTokenRanges": []
+                },
+                {
+                    "kind": "Interface",
+                    "canonicalReference": "@bonapata/partes!DockProps:interface",
+                    "docComment": "",
+                    "excerptTokens": [
+                        {
+                            "kind": "Content",
+                            "text": "export interface DockProps "
+                        }
+                    ],
+                    "fileUrlPath": "src/components/Dock/Dock.tsx",
+                    "releaseTag": "Public",
+                    "name": "DockProps",
+                    "preserveMemberOrder": false,
+                    "members": [
+                        {
+                            "kind": "PropertySignature",
+                            "canonicalReference": "@bonapata/partes!DockProps#\"aria-label\":member",
+                            "docComment": "",
+                            "excerptTokens": [
+                                {
+                                    "kind": "Content",
+                                    "text": "'aria-label'?: "
+                                },
+                                {
+                                    "kind": "Content",
+                                    "text": "string"
+                                },
+                                {
+                                    "kind": "Content",
+                                    "text": ";"
+                                }
+                            ],
+                            "isReadonly": false,
+                            "isOptional": true,
+                            "releaseTag": "Public",
+                            "name": "\"aria-label\"",
+                            "propertyTypeTokenRange": {
+                                "startIndex": 1,
+                                "endIndex": 2
+                            }
+                        },
+                        {
+                            "kind": "PropertySignature",
+                            "canonicalReference": "@bonapata/partes!DockProps#className:member",
+                            "docComment": "",
+                            "excerptTokens": [
+                                {
+                                    "kind": "Content",
+                                    "text": "className?: "
+                                },
+                                {
+                                    "kind": "Content",
+                                    "text": "string"
+                                },
+                                {
+                                    "kind": "Content",
+                                    "text": ";"
+                                }
+                            ],
+                            "isReadonly": false,
+                            "isOptional": true,
+                            "releaseTag": "Public",
+                            "name": "className",
+                            "propertyTypeTokenRange": {
+                                "startIndex": 1,
+                                "endIndex": 2
+                            }
+                        },
+                        {
+                            "kind": "PropertySignature",
+                            "canonicalReference": "@bonapata/partes!DockProps#distance:member",
+                            "docComment": "",
+                            "excerptTokens": [
+                                {
+                                    "kind": "Content",
+                                    "text": "distance?: "
+                                },
+                                {
+                                    "kind": "Content",
+                                    "text": "number"
+                                },
+                                {
+                                    "kind": "Content",
+                                    "text": ";"
+                                }
+                            ],
+                            "isReadonly": false,
+                            "isOptional": true,
+                            "releaseTag": "Public",
+                            "name": "distance",
+                            "propertyTypeTokenRange": {
+                                "startIndex": 1,
+                                "endIndex": 2
+                            }
+                        },
+                        {
+                            "kind": "PropertySignature",
+                            "canonicalReference": "@bonapata/partes!DockProps#iconSize:member",
+                            "docComment": "",
+                            "excerptTokens": [
+                                {
+                                    "kind": "Content",
+                                    "text": "iconSize?: "
+                                },
+                                {
+                                    "kind": "Content",
+                                    "text": "number"
+                                },
+                                {
+                                    "kind": "Content",
+                                    "text": ";"
+                                }
+                            ],
+                            "isReadonly": false,
+                            "isOptional": true,
+                            "releaseTag": "Public",
+                            "name": "iconSize",
+                            "propertyTypeTokenRange": {
+                                "startIndex": 1,
+                                "endIndex": 2
+                            }
+                        },
+                        {
+                            "kind": "PropertySignature",
+                            "canonicalReference": "@bonapata/partes!DockProps#items:member",
+                            "docComment": "",
+                            "excerptTokens": [
+                                {
+                                    "kind": "Content",
+                                    "text": "items: "
+                                },
+                                {
+                                    "kind": "Reference",
+                                    "text": "DockItem",
+                                    "canonicalReference": "@bonapata/partes!DockItem:interface"
+                                },
+                                {
+                                    "kind": "Content",
+                                    "text": "[]"
+                                },
+                                {
+                                    "kind": "Content",
+                                    "text": ";"
+                                }
+                            ],
+                            "isReadonly": false,
+                            "isOptional": false,
+                            "releaseTag": "Public",
+                            "name": "items",
+                            "propertyTypeTokenRange": {
+                                "startIndex": 1,
+                                "endIndex": 3
+                            }
+                        },
+                        {
+                            "kind": "PropertySignature",
+                            "canonicalReference": "@bonapata/partes!DockProps#magnification:member",
+                            "docComment": "",
+                            "excerptTokens": [
+                                {
+                                    "kind": "Content",
+                                    "text": "magnification?: "
+                                },
+                                {
+                                    "kind": "Content",
+                                    "text": "number"
+                                },
+                                {
+                                    "kind": "Content",
+                                    "text": ";"
+                                }
+                            ],
+                            "isReadonly": false,
+                            "isOptional": true,
+                            "releaseTag": "Public",
+                            "name": "magnification",
+                            "propertyTypeTokenRange": {
+                                "startIndex": 1,
+                                "endIndex": 2
+                            }
+                        }
+                    ],
+                    "extendsTokenRanges": []
                 },
                 {
                     "kind": "Interface",
