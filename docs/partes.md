@@ -19,6 +19,20 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
+[DockItem](./partes.dockitem.md)
+
+</td><td>
+
+</td></tr>
+<tr><td>
+
+[DockProps](./partes.dockprops.md)
+
+</td><td>
+
+</td></tr>
+<tr><td>
+
 [INotificationProps](./partes.inotificationprops.md)
 
 </td><td>
@@ -73,6 +87,13 @@ Description
 </td><td>
 
 Un boton que permite quitar o poner la clase dark del elemento html. Lo que controla el modo oscuro o claro de los otros componentes.
+
+</td></tr>
+<tr><td>
+
+[Dock](./partes.dock.md)
+
+</td><td>
 
 </td></tr>
 <tr><td>

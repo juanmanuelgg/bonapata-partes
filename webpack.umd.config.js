@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
     entry: './dist/esm/index.js',
     output: {
@@ -20,5 +22,21 @@ module.exports = {
             amd: 'react-dom',
             root: 'ReactDOM'
         }
+    },
+    resolve: {
+        alias: {
+            './Dock.css': path.resolve(
+                __dirname,
+                'src/components/Dock/Dock.css'
+            )
+        }
+    },
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
+            }
+        ]
     }
 };
