@@ -339,6 +339,9 @@ video {
 .absolute {
     position: absolute;
 }
+.relative {
+    position: relative;
+}
 .mx-auto {
     margin-left: auto;
     margin-right: auto;
@@ -379,6 +382,9 @@ video {
 }
 .rounded-xl {
     border-radius: 0.75rem;
+}
+.border {
+    border-width: 1px;
 }
 .bg-orange-100 {
     --tw-bg-opacity: 1;
@@ -423,6 +429,22 @@ video {
     box-shadow:
         var(--tw-ring-offset-shadow, 0 0 #0000),
         var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.outline {
+    outline-style: solid;
+}
+.blur {
+    --tw-blur: blur(8px);
+    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+        var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
+        var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.backdrop-filter {
+    backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness)
+        var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale)
+        var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert)
+        var(--tw-backdrop-opacity) var(--tw-backdrop-saturate)
+        var(--tw-backdrop-sepia);
 }
 .transition {
     transition-property:
